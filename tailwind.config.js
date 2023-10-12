@@ -15,6 +15,12 @@ module.exports = {
         '2xl': '1400px',
       },
     },
+    letterSpacing: {
+      normal: '0',
+      wide: '0.05em',
+      wider: '0.1em',
+      widest: '0.16em',
+    },
     extend: {
       fontFamily: {
         'sans-tc': ['Noto Sans TC', 'sans-serif'],
