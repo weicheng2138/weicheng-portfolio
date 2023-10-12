@@ -16,6 +16,10 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        'sans-tc': ['Noto Sans TC', 'sans-serif'],
+        'serif-hk': ['Noto Serif HK', 'serif'],
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
