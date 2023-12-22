@@ -76,10 +76,15 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: 0 },
         },
-        move: {
+        'move-medium': {
           '25%': { transform: 'translatey(-24px)', opacity: 1 },
           '50%': { transform: 'translatey(-48px)' },
           '75%': { transform: 'translatey(-72px)' },
+        },
+        'move-large': {
+          '25%': { transform: 'translatey(-32px)', opacity: 1 },
+          '50%': { transform: 'translatey(-64px)' },
+          '75%': { transform: 'translatey(-96px)' },
         },
       },
       animation: {
