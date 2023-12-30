@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 type Props = {
   textArray: string[];
 };
-const TextRoller = (props: Props) => {
+const TextRoller = ({ textArray }: Props) => {
   console.log('$$$ TextRoller rendered');
 
   const animationRef = useRef<HTMLDivElement>(null);
@@ -42,20 +42,14 @@ const TextRoller = (props: Props) => {
       <div
         className="relative"
         style={{
-          transform: `translateY(${elementHeight * 1.5}px)`,
+          transform: `translateY(${elementHeight * 2}px)`,
         }}
       >
         <motion.div
           ref={animationRef}
           className={cn('flex flex-col text-center')}
           animate={{
-            translateY: [
-              0,
-              -elementHeight * 1,
-              -elementHeight * 2,
-              -elementHeight * 3,
-              0,
-            ],
+            translateY: ['0%', '-20%', '-40%', '-60%', '-80%'],
           }}
           transition={{
             duration: 4,
@@ -64,10 +58,16 @@ const TextRoller = (props: Props) => {
             repeat: Infinity,
           }}
         >
+          {/* {textArray.map((text, index) => ( */}
+          {/*   <h1 key={index} className={cn('relative text-[#e06c75]')}> */}
+          {/*     {text} */}
+          {/*   </h1> */}
+          {/* ))} */}
           <h1 className="relative text-[#e06c75]">Hello World!</h1>
           <h1 className="relative text-[#61afef]">こんにちは世界！</h1>
           <h1 className="relative text-[#98c379]">Hallo Welt!</h1>
           <h1 className="relative text-[#e5c07b]">您好世界！</h1>
+          <h1 className="relative text-[#e06c75]">Hello World!</h1>
         </motion.div>
 
         {/* After Mask for roller */}
@@ -86,7 +86,7 @@ const TextRoller = (props: Props) => {
             'absolute inset-0 bottom-0 bg-background transition-colors duration-500',
           )}
           style={{
-            transform: `translateY(-${elementHeight * 4}px)`,
+            transform: `translateY(-${elementHeight * 5}px)`,
           }}
         />
       </div>

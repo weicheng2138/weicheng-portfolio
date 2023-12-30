@@ -14,7 +14,14 @@ const Home = () => {
     <div>
       <Typography variant="h1">HOME</Typography>
       <h1 className="text-center">{t('author')}</h1>
-      <TextRoller textArray={[]} />
+      <TextRoller
+        textArray={[
+          'Hello World!',
+          'こんにちは世界！',
+          'Hallo Welt!',
+          '您好世界！',
+        ]}
+      />
       <button onClick={() => navigate('/about')}>To About</button>
     </div>
   );
