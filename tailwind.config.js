@@ -8,13 +8,13 @@ module.exports = {
     './src/**/*.{ts,tsx}',
   ],
   theme: {
+    screens: {
+      sm: '450px',
+      md: '768px',
+    },
     container: {
       center: true,
       padding: '2rem',
-      screens: {
-        sm: '450px',
-        md: '768px',
-      },
     },
     letterSpacing: {
       normal: '0',

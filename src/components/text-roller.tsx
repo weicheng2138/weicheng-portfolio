@@ -28,7 +28,7 @@ const TextRoller = ({ textArray }: Props) => {
   return (
     <div
       className={cn(
-        'relative flex items-center justify-center font-fira text-base text-[#e4bb68] md:text-2xl',
+        'relative flex items-center justify-center font-fira text-base text-[#e4bb68] sm:text-xl md:text-2xl',
       )}
       style={{
         height: elementHeight * (elementCount * 2 + 2),
