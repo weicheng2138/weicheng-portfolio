@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { useEffect, useRef, useState } from 'react';
 
 type Props = {
-  textArray: string[];
+  textArray?: string[];
 };
 const TextRoller = ({ textArray }: Props) => {
   console.log('$$$ TextRoller rendered');
@@ -21,8 +21,6 @@ const TextRoller = ({ textArray }: Props) => {
     if (!animationDiv) return;
     setElementHeight(animationDiv.children[0].clientHeight);
     setElementCount(animationDiv.children.length);
-    console.log(animationDiv.children.length);
-    console.log(animationDiv.children[0].clientHeight);
   }, [elementHeight, breakpoint]);
 
   return (
