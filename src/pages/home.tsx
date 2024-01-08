@@ -11,11 +11,10 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <Typography variant="h1">HOME</Typography>
-      <h1 className="text-center">{t('author')}</h1>
+    <div className="flex h-dvh items-center justify-center">
+      {/* <Typography variant="h1">HOME</Typography> */}
       <TextRoller />
-      <button onClick={() => navigate('/about')}>To About</button>
+      {/* <button onClick={() => navigate('/about')}>To About</button> */}
     </div>
   );
 };
