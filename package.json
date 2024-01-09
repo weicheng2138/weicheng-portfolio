@@ -26,7 +26,8 @@
     "react-icons": "^4.12.0",
     "react-router-dom": "^6.21.1",
     "tailwind-merge": "^1.14.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "vaul": "^0.8.0"
   },
   "devDependencies": {
     "@types/node": "^20.10.7",
