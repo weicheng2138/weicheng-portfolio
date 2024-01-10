@@ -5,8 +5,9 @@ import { useEffect, useRef, useState } from 'react';
 
 type Props = {
   textArray?: string[];
+  className?: string;
 };
-const TextRoller = ({ textArray }: Props) => {
+const TextRoller = ({ textArray, className }: Props) => {
   console.log('$$$ TextRoller rendered');
 
   const animationRef = useRef<HTMLDivElement>(null);
@@ -27,6 +28,7 @@ const TextRoller = ({ textArray }: Props) => {
     <div
       className={cn(
         'relative flex items-center justify-center font-fira text-base text-[#e4bb68] sm:text-xl md:text-2xl',
+        className,
       )}
       style={{
         height: elementHeight * (elementCount * 2 + 2),

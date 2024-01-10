@@ -14,7 +14,7 @@ const Home = () => {
     <>
       <div className="flex h-dvh items-center justify-center">
         {/* <Typography variant="h1">HOME</Typography> */}
-        <TextRoller />
+        <TextRoller className="z-10" />
         {/* <button onClick={() => navigate('/about')}>To About</button> */}
       </div>
       <main>

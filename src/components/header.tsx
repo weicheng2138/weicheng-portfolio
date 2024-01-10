@@ -1,12 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import { ModeToggle } from '@/components/mode-toggle';
 import { I18nToggle } from '@/components/i18n-toggle';
+import MenuDrawer from '@/components/menu-drawer';
 import { Button } from '@/components/ui/button';
 import { Link, NavLink } from 'react-router-dom';
 import { HiCode, HiMenuAlt3 } from 'react-icons/hi';
 import useBreakpoint from '@/hooks/useBreakpoint';
 
-function Header() {
+type Props = {
+  handleDrawerClick: () => void;
+};
+function Header({ handleDrawerClick }: Props) {
   const { t } = useTranslation();
   const breakpoint = useBreakpoint();
 
@@ -19,7 +23,11 @@ function Header() {
 
         <section className="flex items-center gap-2">
           {breakpoint === 'xs' ? (
-            <Button variant="ghost" size="icon">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => handleDrawerClick()}
+            >
               <HiMenuAlt3 className="h-[1.2rem] w-[1.2rem]" />
             </Button>
           ) : (
