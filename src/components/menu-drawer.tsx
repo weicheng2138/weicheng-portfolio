@@ -48,6 +48,17 @@ const MenuDrawer = ({ show, handleClose }: Props) => {
       body.classList.remove('overflow-hidden');
     }
   }, [show]);
+
+  // Handle close on escape
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') handleClose();
+    };
+    if (show) {
+      window.addEventListener('keyup', handleEscape);
+    }
+    return () => window.removeEventListener('keyup', handleEscape);
+  });
   return createPortal(
     <AnimatePresence>
       {show && (
