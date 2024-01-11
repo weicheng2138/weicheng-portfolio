@@ -6,16 +6,20 @@ import { Button } from '@/components/ui/button';
 import { Link, NavLink } from 'react-router-dom';
 import { HiCode, HiMenuAlt3 } from 'react-icons/hi';
 import useBreakpoint from '@/hooks/useBreakpoint';
+import { cn } from '@/lib/utils';
 
 type Props = {
+  className?: string;
   handleDrawerClick: () => void;
 };
-function Header({ handleDrawerClick }: Props) {
+function Header({ handleDrawerClick, className }: Props) {
   const { t } = useTranslation();
   const breakpoint = useBreakpoint();
 
   return (
-    <header className="fixed flex h-[4.5rem] w-full justify-center">
+    <header
+      className={cn('fixed flex h-[4.5rem] w-full justify-center', className)}
+    >
       <div className="flex w-full max-w-5xl items-center justify-between px-2 sm:px-4">
         <Button variant="ghost" size="icon">
           <HiCode className="h-[1.2rem] w-[1.2rem]" />

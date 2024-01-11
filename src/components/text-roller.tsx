@@ -73,7 +73,7 @@ const TextRoller = ({ textArray, className }: Props) => {
         {/* After Mask for roller */}
         <div
           className={cn(
-            'absolute inset-0 bg-background transition-colors duration-500',
+            'absolute inset-0 z-10 bg-background transition-colors duration-500',
           )}
           style={{
             transform: `translateY(${elementHeight}px)`,
@@ -83,7 +83,7 @@ const TextRoller = ({ textArray, className }: Props) => {
         {/* Before Mask for roller */}
         <div
           className={cn(
-            'absolute inset-0 bottom-0 bg-background transition-colors duration-500',
+            'absolute inset-0 bottom-0 z-10 bg-background transition-colors duration-500',
           )}
           style={{
             transform: `translateY(-${elementHeight * 5}px)`,
