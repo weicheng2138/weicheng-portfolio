@@ -45,7 +45,13 @@ function Header({ handleDrawerClick, className }: Props) {
                 {t('nav.about')}
               </NavLink>
               <NavLink to="/projects">{t('nav.projects')}</NavLink>
-              <Link to="http://google.com">{t('nav.resume')}</Link>
+              <a
+                href="http://www.google.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t('nav.resume')}
+              </a>
               <ModeToggle />
               |
               <I18nToggle />

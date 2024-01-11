@@ -72,14 +72,14 @@ const MenuDrawer = ({ show, handleClose }: Props) => {
             onClick={() => handleClose()}
           />
           <motion.div
-            initial={{ x: 300 }}
+            initial={{ x: 250 }}
             animate={{
               x: 0,
               transition: { duration: 0.4, delay: 0.5, ease: 'easeInOut' },
             }}
-            exit={{ x: 300, transition: { duration: 0.4 } }}
+            exit={{ x: 250, transition: { duration: 0.4 } }}
             className={cn(
-              'fixed right-0 top-0 z-50 h-full w-[300px]',
+              'fixed right-0 top-0 z-50 h-full w-[250px]',
               'flex flex-col gap-4 bg-background p-6',
             )}
           >
@@ -106,9 +106,13 @@ const MenuDrawer = ({ show, handleClose }: Props) => {
               <NavLink to="/projects" onClick={() => handleClose()}>
                 {t('nav.projects')}
               </NavLink>
-              <Link to="http://google.com" onClick={() => handleClose()}>
+              <a
+                href="http://www.google.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {t('nav.resume')}
-              </Link>
+              </a>
             </div>
           </motion.div>
         </>
