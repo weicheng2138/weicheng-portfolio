@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { ModeToggle } from '@/components/mode-toggle';
 import { I18nToggle } from '@/components/i18n-toggle';
-import MenuDrawer from '@/components/menu-drawer';
 import { Button } from '@/components/ui/button';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { HiCode, HiMenuAlt3 } from 'react-icons/hi';
 import useBreakpoint from '@/hooks/useBreakpoint';
 import { cn } from '@/lib/utils';
+import { useEffect, useState } from 'react';
 
 type Props = {
   className?: string;
@@ -16,9 +16,28 @@ function Header({ handleDrawerClick, className }: Props) {
   const { t } = useTranslation();
   const breakpoint = useBreakpoint();
 
+  // Detect scroll position
+  const [isTop, setIsTop] = useState(true);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsTop(false);
+      } else {
+        setIsTop(true);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isTop]);
+
   return (
     <header
-      className={cn('fixed flex h-[4.5rem] w-full justify-center', className)}
+      className={cn(
+        'fixed flex h-[4.5rem] w-full justify-center dark:border-zinc-700',
+        className,
+        !isTop && 'border-b-2 border-zinc-200 dark:border-zinc-700',
+        'bg-radial-light backdrop-blur-sm backdrop-saturate-50 [background-size:4px_4px] dark:bg-radial-dark',
+      )}
     >
       <div className="flex w-full max-w-5xl items-center justify-between px-2 sm:px-4">
         <Button variant="ghost" size="icon">

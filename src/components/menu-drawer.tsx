@@ -80,7 +80,7 @@ const MenuDrawer = ({ show, handleClose }: Props) => {
             exit={{ x: 250, transition: { duration: 0.4 } }}
             className={cn(
               'fixed right-0 top-0 z-50 h-full w-[250px]',
-              'flex flex-col gap-4 bg-background p-6',
+              'flex flex-col gap-4 bg-background p-6 drop-shadow-lg',
             )}
           >
             <section className="flex justify-between">

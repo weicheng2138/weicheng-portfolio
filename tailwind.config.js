@@ -82,6 +82,10 @@ module.exports = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      backgroundImage: {
+        'radial-light': 'radial-gradient(transparent 1px, white 1px)',
+        'radial-dark': 'radial-gradient(transparent 1px, black 1px)',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
