@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import useBreakpoint from '@/hooks/useBreakpoint';
 import { cn } from '@/lib/utils';
 import { useEffect, useRef, useState } from 'react';
@@ -8,8 +8,10 @@ type Props = {
   className?: string;
 };
 const TextRoller = ({ textArray, className }: Props) => {
-  console.log('$$$ TextRoller rendered');
+  // console.log('$$$ TextRoller rendered');
 
+  const { scrollYProgress, scrollY } = useScroll();
+  const translateY = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const animationRef = useRef<HTMLDivElement>(null);
   const [elementHeight, setElementHeight] = useState(240);
   const [elementCount, setElementCount] = useState(0);
@@ -17,11 +19,16 @@ const TextRoller = ({ textArray, className }: Props) => {
   const breakpoint = useBreakpoint();
 
   useEffect(() => {
-    console.log('$$$ TextRoller useEffect');
+    // console.log('$$$ TextRoller useEffect');
+    // console.log('$$$ breakpoint', breakpoint);
+    // console.log('$$$ elementHeight', elementHeight);
     const animationDiv = animationRef.current;
     if (!animationDiv) return;
-    setElementHeight(animationDiv.children[0].clientHeight);
-    setElementCount(animationDiv.children.length);
+    setTimeout(() => {
+      setElementHeight(animationDiv.children[0].clientHeight);
+      setElementCount(animationDiv.children.length);
+      // console.log('$$$ animationDiv', animationDiv.children[0].clientHeight);
+    }, 100);
   }, [elementHeight, breakpoint]);
 
   return (

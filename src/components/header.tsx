@@ -3,7 +3,7 @@ import { ModeToggle } from '@/components/mode-toggle';
 import { I18nToggle } from '@/components/i18n-toggle';
 import { Button } from '@/components/ui/button';
 import { NavLink } from 'react-router-dom';
-import { HiCode, HiMenuAlt3 } from 'react-icons/hi';
+import { HiCode, HiMenuAlt3, HiDownload } from 'react-icons/hi';
 import useBreakpoint from '@/hooks/useBreakpoint';
 import { cn } from '@/lib/utils';
 import { useEffect, useState } from 'react';
@@ -35,7 +35,7 @@ function Header({ handleDrawerClick, className }: Props) {
       className={cn(
         'fixed flex h-[4.5rem] w-full justify-center transition',
         className,
-        !isTop && 'border-b border-zinc-200 shadow-md dark:border-zinc-800',
+        !isTop && 'border-b border-zinc-200 dark:border-zinc-800',
         'bg-radial-light backdrop-blur-sm backdrop-saturate-50 [background-size:4px_4px] dark:bg-radial-dark',
       )}
     >
@@ -44,8 +44,38 @@ function Header({ handleDrawerClick, className }: Props) {
           <HiCode className="h-[1.2rem] w-[1.2rem]" />
         </Button>
 
-        <section className="flex items-center gap-2">
-          {breakpoint === 'xs' ? (
+        <section className="flex items-center gap-3">
+          {breakpoint === 'md' ? (
+            <>
+              <NavLink
+                className={({ isActive }) => isActive && 'text-primary'}
+                to="/about"
+              >
+                {t('nav.about')}
+              </NavLink>
+              <NavLink
+                className={({ isActive }) => (isActive ? 'text-primary' : '')}
+                to="/projects"
+              >
+                {t('nav.projects')}
+              </NavLink>
+              <a
+                href="http://www.google.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="resume" className="border-[1.5px]">
+                  <div className="flex items-center gap-1">
+                    <HiDownload className="h-[1.2rem] w-[1.2rem]" />
+                    {t('nav.resume')}
+                  </div>
+                </Button>
+              </a>
+              <ModeToggle />
+              |
+              <I18nToggle />
+            </>
+          ) : (
             <Button
               variant="ghost"
               size="icon"
@@ -53,28 +83,6 @@ function Header({ handleDrawerClick, className }: Props) {
             >
               <HiMenuAlt3 className="h-[1.2rem] w-[1.2rem]" />
             </Button>
-          ) : (
-            <>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? 'bg-red-300 dark:bg-yellow-600' : ''
-                }
-                to="/about"
-              >
-                {t('nav.about')}
-              </NavLink>
-              <NavLink to="/projects">{t('nav.projects')}</NavLink>
-              <a
-                href="http://www.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t('nav.resume')}
-              </a>
-              <ModeToggle />
-              |
-              <I18nToggle />
-            </>
           )}
         </section>
       </div>

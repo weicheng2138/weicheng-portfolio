@@ -3,8 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ModeToggle } from '@/components/mode-toggle';
 import { I18nToggle } from '@/components/i18n-toggle';
 import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
 import { HiX } from 'react-icons/hi';
-import { Link, NavLink } from 'react-router-dom';
+import { VscGithubInverted } from 'react-icons/vsc';
+import { RiLinkedinFill } from 'react-icons/ri';
+
+import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
@@ -75,15 +79,15 @@ const MenuDrawer = ({ show, handleClose }: Props) => {
             initial={{ x: 250 }}
             animate={{
               x: 0,
-              transition: { duration: 0.4, delay: 0.5, ease: 'easeInOut' },
+              transition: { duration: 0.4, delay: 0.5, type: 'spring' },
             }}
             exit={{ x: 250, transition: { duration: 0.4 } }}
             className={cn(
               'fixed right-0 top-0 z-50 h-full w-[250px]',
-              'flex flex-col gap-4 bg-background p-6 drop-shadow-lg',
+              'flex flex-col gap-4 bg-background drop-shadow-lg',
             )}
           >
-            <section className="flex justify-between">
+            <section className="flex justify-between px-4 py-2">
               <div className="flex items-center">
                 <ModeToggle />
                 |
@@ -99,7 +103,8 @@ const MenuDrawer = ({ show, handleClose }: Props) => {
               </Button>
             </section>
 
-            <div className="flex flex-col gap-2 p-2">
+            <div className="flex flex-col items-center gap-4 p-6">
+              {/* Links for sites */}
               <NavLink to="/about" onClick={() => handleClose()}>
                 {t('nav.about')}
               </NavLink>
@@ -112,6 +117,41 @@ const MenuDrawer = ({ show, handleClose }: Props) => {
                 rel="noopener noreferrer"
               >
                 {t('nav.resume')}
+              </a>
+            </div>
+
+            <Separator />
+            {/* Links for socials media */}
+            <div className="flex flex-col gap-2 p-2">
+              <a
+                href="http://www.google.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="social" className="text-center">
+                  <VscGithubInverted className="mr-2 h-[1.2rem] w-[1.2rem]" />
+                  Github
+                </Button>
+              </a>
+              <a
+                href="http://www.google.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="social" className="text-center">
+                  <RiLinkedinFill className="mr-2 h-[1.2rem] w-[1.2rem]" />
+                  LinkedIn
+                </Button>
+              </a>
+              <a
+                href="http://www.google.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="social" className="text-center">
+                  <VscGithubInverted className="mr-2 h-[1.2rem] w-[1.2rem]" />
+                  Github
+                </Button>
               </a>
             </div>
           </motion.div>
