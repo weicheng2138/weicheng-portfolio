@@ -40,9 +40,11 @@ function Header({ handleDrawerClick, className }: Props) {
       )}
     >
       <div className="flex w-full max-w-5xl items-center justify-between px-2 sm:px-4">
-        <Button variant="ghost" size="icon">
-          <HiCode className="h-[1.2rem] w-[1.2rem]" />
-        </Button>
+        <NavLink to="/">
+          <Button variant="ghost" size="icon" className="hover:bg-transparent">
+            <HiCode className="h-[1.2rem] w-[1.2rem]" />
+          </Button>
+        </NavLink>
 
         <section className="flex items-center gap-3">
           {breakpoint === 'md' ? (

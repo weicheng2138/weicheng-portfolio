@@ -14,6 +14,7 @@ import Project from '@/pages/project';
 import Projects from '@/pages/projects';
 import NotFound from '@/pages/not-found';
 import DefaultLayout from '@/layouts/default';
+import ContentLayout from '@/layouts/content-layout';
 
 function App() {
   const router = createBrowserRouter(
@@ -21,9 +22,12 @@ function App() {
       // <Route path="/" element={<DefaultLayout />} errorElement={<NotFound />}>
       <Route path="/" element={<DefaultLayout />}>
         <Route index element={<Home />} />
-        <Route path="/about" element={<Home />} />
 
-        <Route path="/projects">
+        <Route path="/about" element={<ContentLayout />}>
+          <Route index element={<About />} />
+        </Route>
+
+        <Route path="/projects" element={<ContentLayout />}>
           <Route index element={<Projects />} />
           <Route path=":name" element={<Project />} />
         </Route>

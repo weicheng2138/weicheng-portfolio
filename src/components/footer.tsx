@@ -2,7 +2,7 @@ import Typography from './typography';
 
 const Footer = () => {
   return (
-    <footer className="flex h-[3.5rem] items-center justify-center bg-primary dark:bg-primary05">
+    <footer className="absolute bottom-0 flex h-[3.5rem] w-full items-center justify-center bg-primary dark:bg-primary05">
       <Typography variant="span" className="text-gray01">
         © 2023 Wei-Cheng Hung. All Rights Reserved.
       </Typography>
