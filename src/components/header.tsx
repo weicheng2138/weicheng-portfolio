@@ -48,7 +48,7 @@ function Header({ handleDrawerClick, className }: Props) {
           {breakpoint === 'md' ? (
             <>
               <NavLink
-                className={({ isActive }) => isActive && 'text-primary'}
+                className={({ isActive }) => (isActive ? 'text-primary' : '')}
                 to="/about"
               >
                 {t('nav.about')}
