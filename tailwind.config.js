@@ -29,6 +29,17 @@ module.exports = {
         fira: ['Fira Code', 'sans-serif'],
       },
       colors: {
+        primary01: '#F4F9FB',
+        primary02: '#E2F4F8',
+        primary04: '#1682B6',
+        primary05: '#50585C',
+        gray01: '#FCFCFC',
+        gray02: '#F4F4F4',
+        gray03: '#D9D9D9',
+        gray04: '#888888',
+        gray05: '#4D4D4D',
+        gray06: '#646464',
+
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
