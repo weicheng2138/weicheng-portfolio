@@ -12,6 +12,9 @@ import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
+import CustomLink from './custom-link';
+import Typography from './typography';
+import { BiLogoGmail } from 'react-icons/bi';
 
 const createDrawerPortal = () => {
   const drawer = document.createElement('div');
@@ -103,56 +106,60 @@ const MenuDrawer = ({ show, handleClose }: Props) => {
               </Button>
             </section>
 
-            <div className="flex flex-col items-center gap-4 p-6">
+            <div className="flex w-full flex-col items-center gap-2 p-2">
               {/* Links for sites */}
-              <NavLink to="/about" onClick={() => handleClose()}>
-                {t('nav.about')}
-              </NavLink>
-              <NavLink to="/projects" onClick={() => handleClose()}>
-                {t('nav.projects')}
-              </NavLink>
-              <a
-                href="http://www.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t('nav.resume')}
-              </a>
+              <CustomLink href="/about" className="w-full">
+                <Button
+                  variant="social"
+                  className="flex h-auto gap-2 py-4"
+                  onClick={() => handleClose()}
+                >
+                  <Typography variant="button1">{t('nav.about')}</Typography>
+                </Button>
+              </CustomLink>
+              <CustomLink href="/projects" className="w-full">
+                <Button
+                  variant="social"
+                  className="flex h-auto gap-2 py-4"
+                  onClick={() => handleClose()}
+                >
+                  <Typography variant="button1">{t('nav.projects')}</Typography>
+                </Button>
+              </CustomLink>
+
+              <CustomLink href="http://www.google.com" className="w-full">
+                <Button
+                  variant="social"
+                  className="flex h-auto gap-2 py-4"
+                  onClick={() => handleClose()}
+                >
+                  <Typography variant="button1">{t('nav.resume')}</Typography>
+                </Button>
+              </CustomLink>
             </div>
 
             <Separator />
             {/* Links for socials media */}
             <div className="flex flex-col gap-2 p-2">
-              <a
-                href="http://www.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="social" className="text-center">
-                  <VscGithubInverted className="mr-2 h-[1.2rem] w-[1.2rem]" />
-                  Github
+              <CustomLink href="https://github.com/weicheng2138">
+                <Button variant="social" className="flex h-auto gap-2 py-4">
+                  <VscGithubInverted className="h-[1.25rem] w-[1.25rem]" />
+                  <Typography variant="button1">Github</Typography>
                 </Button>
-              </a>
-              <a
-                href="http://www.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="social" className="text-center">
-                  <RiLinkedinFill className="mr-2 h-[1.2rem] w-[1.2rem]" />
-                  LinkedIn
+              </CustomLink>
+              <CustomLink href="https://www.linkedin.com/in/wei-cheng-hung-3a40a0149/">
+                <Button variant="social" className="flex h-auto gap-2 py-4">
+                  <RiLinkedinFill className="h-[1.25rem] w-[1.25rem]" />
+                  <Typography variant="button1">Linkedin</Typography>
                 </Button>
-              </a>
-              <a
-                href="http://www.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="social" className="text-center">
-                  <VscGithubInverted className="mr-2 h-[1.2rem] w-[1.2rem]" />
-                  Github
+              </CustomLink>
+
+              <CustomLink href="mailto:weicheng2138@gmail.com">
+                <Button variant="social" className="flex h-auto gap-2 py-4">
+                  <BiLogoGmail className="h-[1.25rem] w-[1.25rem]" />
+                  <Typography variant="button1">Gmail</Typography>
                 </Button>
-              </a>
+              </CustomLink>
             </div>
           </motion.div>
         </>
