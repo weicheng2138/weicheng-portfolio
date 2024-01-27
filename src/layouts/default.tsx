@@ -18,7 +18,7 @@ const DefaultLayout = () => {
     }
   }, [breakpoint]);
   return (
-    <div className={cn('relative flex flex-col items-center')}>
+    <div className={cn('relative flex flex-col items-center scroll-smooth')}>
       <Header className="z-30" handleDrawerClick={handleDrawerClick} />
       <MenuDrawer show={toggleDrawer} handleClose={handleDrawerClick} />
       <Outlet />
