@@ -33,13 +33,13 @@ function Header({ handleDrawerClick, className }: Props) {
   return (
     <header
       className={cn(
-        'fixed flex h-[4.5rem] w-full justify-center transition',
+        'fixed top-0 flex h-[4.5rem] w-full justify-center transition',
         className,
         !isTop && 'border-b border-zinc-200 dark:border-zinc-800',
         'bg-radial-light backdrop-blur-sm backdrop-saturate-50 [background-size:4px_4px] dark:bg-radial-dark',
       )}
     >
-      <div className="flex w-full max-w-5xl items-center justify-between px-2 sm:px-4">
+      <nav className="flex w-full max-w-5xl items-center justify-between px-2 sm:px-4">
         <NavLink to="/">
           <Button variant="ghost" size="icon" className="hover:bg-transparent">
             <HiCode className="h-[1.2rem] w-[1.2rem]" />
@@ -87,7 +87,7 @@ function Header({ handleDrawerClick, className }: Props) {
             </Button>
           )}
         </section>
-      </div>
+      </nav>
     </header>
   );
 }

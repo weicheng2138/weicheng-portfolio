@@ -1,5 +1,6 @@
 import Typography from '@/components/typography';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   const { t } = useTranslation();
@@ -20,7 +21,7 @@ const About = () => {
         Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa
         et culpa duis.
       </p>
-      <p>
+      <p id="p1">
         Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit
         enim labore culpa sint ad nisi Lorem pariatur mollit ex esse
         exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit
@@ -163,6 +164,7 @@ const About = () => {
         Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa
         et culpa duis.
       </p>
+      <a href="#p1">Go to p1</a>
     </div>
   );
 };

@@ -6,6 +6,7 @@ const ContentLayout = () => {
     <main
       className={cn(
         'relative flex min-h-dvh w-full max-w-5xl flex-col pb-[3.5rem] pt-[4.5rem]',
+        // 'relative flex min-h-dvh w-full max-w-5xl flex-col pb-[3.5rem]',
       )}
     >
       <Outlet />
