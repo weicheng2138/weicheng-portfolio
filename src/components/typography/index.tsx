@@ -24,7 +24,7 @@ function Typography({ variant, children, className }: TypographyProps) {
       return (
         <p
           className={cn(
-            'indent-2 font-sans-tc text-base font-normal leading-6 tracking-wide',
+            'font-sans-tc text-base font-normal leading-6 tracking-wide',
             className,
           )}
         >
@@ -35,7 +35,7 @@ function Typography({ variant, children, className }: TypographyProps) {
       return (
         <p
           className={cn(
-            'indent-6 font-sans-tc text-sm font-normal leading-6 tracking-wide',
+            'font-sans-tc text-sm font-normal leading-6 tracking-wide',
             className,
           )}
         >
@@ -46,7 +46,7 @@ function Typography({ variant, children, className }: TypographyProps) {
       return (
         <span
           className={cn(
-            'indent-2 font-sans-tc text-sm font-medium tracking-widest',
+            'font-sans-tc text-sm font-medium tracking-widest',
             className,
           )}
         >
@@ -57,7 +57,7 @@ function Typography({ variant, children, className }: TypographyProps) {
       return (
         <span
           className={cn(
-            'indent-2 font-sans-tc text-sm font-bold tracking-widest',
+            'font-sans-tc text-sm font-bold tracking-widest',
             className,
           )}
         >
@@ -72,7 +72,7 @@ function Typography({ variant, children, className }: TypographyProps) {
       return (
         <Tag
           className={cn(
-            'indent-2 font-sans-tc text-2xl font-bold tracking-wider',
+            'font-sans-tc text-2xl font-bold tracking-wider',
             className,
           )}
         >
@@ -83,7 +83,7 @@ function Typography({ variant, children, className }: TypographyProps) {
       return (
         <Tag
           className={cn(
-            'indent-2 font-sans-tc text-xl font-medium tracking-wide',
+            'font-sans-tc text-xl font-medium tracking-wide',
             className,
           )}
         >
@@ -94,7 +94,7 @@ function Typography({ variant, children, className }: TypographyProps) {
       return (
         <Tag
           className={cn(
-            'indent-2 font-sans-tc text-base font-medium tracking-wider',
+            'font-sans-tc text-base font-medium tracking-wider',
             className,
           )}
         >
@@ -105,7 +105,7 @@ function Typography({ variant, children, className }: TypographyProps) {
       return (
         <Tag
           className={cn(
-            'indent-2 font-sans-tc text-sm font-normal tracking-wide',
+            'font-sans-tc text-sm font-normal tracking-wide',
             className,
           )}
         >
@@ -114,9 +114,7 @@ function Typography({ variant, children, className }: TypographyProps) {
       );
     case 'span':
       return (
-        <Tag
-          className={cn('indent-2 font-sans-tc text-xs font-medium', className)}
-        >
+        <Tag className={cn('font-sans-tc text-xs font-medium', className)}>
           {children}
         </Tag>
       );

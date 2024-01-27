@@ -7,13 +7,13 @@ const CustomLink = ({ href, children, ...rest }: AnchorProps) => {
 
   if (isInternalLink)
     return (
-      <Link to={href} className="font-notoSans" {...rest}>
+      <Link to={href} {...rest}>
         {children}
       </Link>
     );
   if (isAnchorLink)
     return (
-      <a href={href} {...rest} className="font-notoSans">
+      <a href={href} {...rest}>
         {children}
       </a>
     );
@@ -22,18 +22,9 @@ const CustomLink = ({ href, children, ...rest }: AnchorProps) => {
     return <span className="text-red-600">There is no href right now</span>;
   };
   const ExternalLink = () => {
-    const isGithub = href?.includes('github.com');
     return (
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        className="font-notoSans"
-        href={href}
-        {...rest}
-      >
+      <a target="_blank" rel="noopener noreferrer" href={href} {...rest}>
         {children}
-        {/* {typeof children === 'undefined' && */}
-        {/*   (isGithub ? <LinkIcon kind="github" /> : <LinkIcon />)} */}
       </a>
     );
   };

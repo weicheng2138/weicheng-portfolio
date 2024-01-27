@@ -4,5 +4,9 @@
     "about": "About",
     "projects": "Projects",
     "resume": "Resume"
+  },
+  "home": {
+    "contact-title": "Contact Me",
+    "contact-content": "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at"
   }
 }
