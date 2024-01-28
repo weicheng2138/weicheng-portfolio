@@ -7,6 +7,8 @@ import { HiCode, HiMenuAlt3, HiDownload } from 'react-icons/hi';
 import useBreakpoint from '@/hooks/useBreakpoint';
 import { cn } from '@/lib/utils';
 import { useEffect, useState } from 'react';
+import CustomLink from './custom-link';
+import Typography from './typography';
 
 type Props = {
   className?: string;
@@ -39,14 +41,14 @@ function Header({ handleDrawerClick, className }: Props) {
         'bg-radial-light backdrop-blur-sm backdrop-saturate-50 [background-size:4px_4px] dark:bg-radial-dark',
       )}
     >
-      <nav className="flex w-full max-w-5xl items-center justify-between px-2 sm:px-4">
+      <nav className="flex w-full max-w-5xl items-center justify-between px-2 text-gray05 dark:text-gray02 sm:px-4">
         <NavLink to="/">
           <Button variant="ghost" size="icon" className="hover:bg-transparent">
             <HiCode className="h-[1.2rem] w-[1.2rem]" />
           </Button>
         </NavLink>
 
-        <section className="flex items-center gap-3">
+        <section className="flex items-center gap-6">
           {breakpoint === 'md' ? (
             <>
               <NavLink
@@ -61,21 +63,19 @@ function Header({ handleDrawerClick, className }: Props) {
               >
                 {t('nav.projects')}
               </NavLink>
-              <a
+              <CustomLink
                 href="http://www.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                className="flex flex-row items-center gap-2 rounded-full border-2 border-gray05 px-4 py-2 transition-colors hover:bg-gray02 dark:border-gray02 hover:dark:bg-gray05"
               >
-                <Button variant="resume" className="border-[1.5px]">
-                  <div className="flex items-center gap-1">
-                    <HiDownload className="h-[1.2rem] w-[1.2rem]" />
-                    {t('nav.resume')}
-                  </div>
-                </Button>
-              </a>
-              <ModeToggle />
-              |
-              <I18nToggle />
+                <HiDownload className="h-[1.2rem] w-[1.2rem]" />
+                {t('nav.resume')}
+              </CustomLink>
+
+              <section className="flex h-full items-center gap-1">
+                <ModeToggle />
+                |
+                <I18nToggle />
+              </section>
             </>
           ) : (
             <Button
