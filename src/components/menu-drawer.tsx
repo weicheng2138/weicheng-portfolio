@@ -75,18 +75,18 @@ const MenuDrawer = ({ show, handleClose }: Props) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4, delay: 0.5 }}
-            className={cn('absolute inset-0 z-40 backdrop-blur-sm')}
+            className={cn('fixed inset-0 z-40 backdrop-blur-sm')}
             onClick={() => handleClose()}
           />
           <motion.div
             initial={{ x: 250 }}
             animate={{
-              x: 0,
+              x: 5,
               transition: { duration: 0.4, delay: 0.5, type: 'spring' },
             }}
             exit={{ x: 250, transition: { duration: 0.4 } }}
             className={cn(
-              'fixed right-0 top-0 z-50 h-full w-[250px]',
+              'fixed right-0 top-0 z-50 h-full w-[250px] pr-[5px]',
               'flex flex-col gap-4 bg-background drop-shadow-lg',
             )}
           >
