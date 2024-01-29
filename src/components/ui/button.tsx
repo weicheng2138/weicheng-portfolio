@@ -21,6 +21,9 @@ const buttonVariants = cva(
         social: 'w-full bg-background text-foreground hover:bg-accent',
         resume:
           'rounded-full border-2 border-foreground bg-background text-foreground hover:bg-zinc-200 dark:hover:bg-zinc-800',
+        projects: 'w-full bg-white text-primary04 hover:bg-primary02',
+        border:
+          'w-full border border-primary04 bg-transparent text-primary04 hover:bg-accent dark:border-gray02 dark:text-foreground',
       },
       size: {
         default: 'h-10 px-4 py-2',

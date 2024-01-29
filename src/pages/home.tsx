@@ -21,15 +21,15 @@ const Home = () => {
       </header>
       <main className="flex w-full flex-col items-center">
         {/* HERO */}
-        <section className="flex w-full justify-center bg-gray02 pb-[3.5rem] dark:bg-gray05">
+        <section className="flex w-full justify-center bg-gray02 dark:bg-gray05">
           <article
             className={cn(
-              'flex w-full max-w-5xl flex-col items-center justify-center gap-10 px-8 pb-[7.5rem] pt-40',
+              'flex w-full max-w-5xl flex-col items-center justify-center px-8 pb-[7.5rem] pt-40',
               'md:flex-row md:items-start md:gap-10',
             )}
           >
             <div className="flex w-full flex-col gap-2 md:max-w-96">
-              <Typography variant="h2" className="text-lg">
+              <Typography variant="h2" className="text-3xl">
                 {t('author')}
               </Typography>
               <Typography variant="h2" className="text-base">
@@ -37,12 +37,16 @@ const Home = () => {
               </Typography>
             </div>
             <div className="flex flex-col md:max-w-96">
-              <Typography variant="p1" className="mb-10">
+              <Typography variant="p1" className="my-28 md:mb-10 md:mt-0">
                 {t('home.hero-content')}
               </Typography>
               <div className="flex gap-4">
-                <Button variant="default">sdjsdjkl</Button>
-                <Button variant="default">sdjsdjkl</Button>
+                <CustomLink href="/projects" className="w-full">
+                  <Button variant="projects">{t('nav.projects')}</Button>
+                </CustomLink>
+                <CustomLink href="/resume" className="w-full">
+                  <Button variant="border">{t('nav.resume')}</Button>
+                </CustomLink>
               </div>
             </div>
           </article>
