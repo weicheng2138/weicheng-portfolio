@@ -14,7 +14,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { Key } from 'lucide-react';
 
 type JobItem = {
   id: number;
@@ -23,7 +22,7 @@ type JobItem = {
   title: string;
   description: {
     brief: string;
-    detail: string[];
+    details: string[];
   };
 };
 const Home = () => {
@@ -110,10 +109,20 @@ const Home = () => {
                       </div>
                     </AccordionTrigger>
                     <AccordionContent>
-                      <div className="flex flex-col rounded-xl bg-primary01 p-4 text-gray05 dark:bg-gray04 dark:text-gray01">
+                      <div className="flex flex-col rounded-xl bg-primary01 px-6 py-4 text-gray05 dark:bg-gray04 dark:text-gray01">
                         <Typography variant="p2">
                           {job.description.brief}
                         </Typography>
+                        <br />
+                        <ul className="ml-6 list-disc">
+                          {job.description.details.map((detail, index) => {
+                            return (
+                              <li key={`${index}-${detail}`}>
+                                <Typography variant="p2">{detail}</Typography>
+                              </li>
+                            );
+                          })}
+                        </ul>
                       </div>
                     </AccordionContent>
                   </AccordionItem>
