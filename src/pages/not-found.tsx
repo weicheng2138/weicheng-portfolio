@@ -1,5 +1,6 @@
 import Typography from '@/components/typography';
 import { useEffect } from 'react';
+import { TbError404 } from 'react-icons/tb';
 import {
   isRouteErrorResponse,
   useNavigate,
@@ -8,7 +9,7 @@ import {
 
 const NotFound = () => {
   const navigate = useNavigate();
-  const error = useRouteError();
+  const error = useRouteError() as null | unknown;
   let errorMessage: string;
 
   if (isRouteErrorResponse(error)) {
@@ -30,8 +31,15 @@ const NotFound = () => {
   }, [navigate]);
   return (
     <>
-      <Typography variant="h1">404 - Page Not Found</Typography>
-      {error && <p>{errorMessage}</p>}
+      <div className="relative z-10 flex h-dvh w-full justify-center pb-[3.5rem] pt-[4.5rem]">
+        <section className="flex h-full w-full max-w-5xl flex-col items-center justify-center">
+          <TbError404 className="h-40 w-40" />
+          <Typography variant="h1">Page Not Found</Typography>
+          {error !== null && (
+            <Typography variant="p1">{errorMessage}</Typography>
+          )}
+        </section>
+      </div>
     </>
   );
 };
