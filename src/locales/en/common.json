@@ -9,6 +9,50 @@
   "home": {
     "hero-content": " I'm a developer with an insatiable curiosity, dedicated to crafting outstanding frontend experiences. My coding journey blends a passion for technology with a commitment to problem-solving. I thrive on collaborating with teams to create captivating products. Here, I unite my technical skills and creativity to deliver a unique and impressive digital experience for you. Let's explore, innovate, and inspire together.",
     "contact-title": "Contact Me",
-    "contact-content": "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at"
+    "contact-content": "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at",
+    "experience": {
+      "title": "Experiences",
+      "jobs": [
+        {
+          "id": 0,
+          "title": "Frontend Developer",
+          "company": "Web Design Company",
+          "period": "2019/01 - 2020/01",
+          "description": {
+            "brief": "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at",
+            "details": [
+              "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at",
+              "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at"
+            ]
+          }
+        },
+        {
+          "id": 1,
+          "title": "Frontend Developer",
+          "company": "Web Design Company",
+          "period": "2019/01 - 2020/01",
+          "description": {
+            "brief": "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at",
+            "details": [
+              "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at",
+              "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at"
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "title": "Frontend Developer",
+          "company": "Web Design Company",
+          "period": "2019/01 - 2020/01",
+          "description": {
+            "brief": "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at",
+            "details": [
+              "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at",
+              "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at"
+            ]
+          }
+        }
+      ]
+    }
   }
 }

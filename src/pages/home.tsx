@@ -14,11 +14,25 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { Key } from 'lucide-react';
 
+type JobItem = {
+  id: number;
+  period: string;
+  company: string;
+  title: string;
+  description: {
+    brief: string;
+    detail: string[];
+  };
+};
 const Home = () => {
   console.log('Home rendered');
   const { t } = useTranslation();
   const navigate = useNavigate();
+
+  const jobs: JobItem[] = t('home.experience.jobs', { returnObjects: true });
+  console.log(jobs);
 
   return (
     <>
@@ -68,51 +82,43 @@ const Home = () => {
             )}
           >
             <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>
-                  <div className="flex w-full items-center gap-3 md:gap-6">
-                    <Typography
-                      className="basis-1/3 text-left text-gray04 md:basis-2/12"
-                      variant="span"
-                    >
-                      2021-11 ~ 2022-11
-                    </Typography>
-                    <div className="flex basis-5/6 flex-col gap-1 md:flex-row md:gap-6">
-                      <Typography
-                        className="basis-1/2 text-left text-gray05 dark:text-gray01"
-                        variant="h3"
-                      >
-                        統一資訊股份有限公司
-                      </Typography>
-                      <Typography
-                        className="basis-1/2 text-left text-gray05 dark:text-gray01"
-                        variant="p1"
-                      >
-                        前端工程師
-                      </Typography>
-                    </div>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div className="flex flex-col rounded-xl bg-primary01 p-4 text-gray05 dark:bg-gray04 dark:text-gray01">
-                    <Typography variant="p2">
-                      Lorem ipsum dolor sit amet, officia excepteur ex fugiat
-                      reprehenderit enim labore culpa sint ad nisi Lorem
-                      pariatur mollit ex esse exercitation amet. Nisi anim
-                      cupidatat excepteur officia. Reprehenderit nostrud nostrud
-                      ipsum Lorem est aliquip amet voluptate voluptate dolor
-                      minim nulla est proident. Nostrud officia pariatur ut
-                      officia. Sit irure elit esse ea nulla sunt ex occaecat
-                      reprehenderit commodo officia dolor Lorem duis laboris
-                      cupidatat officia voluptate. Culpa proident adipisicing id
-                      nulla nisi laboris ex in Lorem sunt duis officia eiusmod.
-                      Aliqua reprehenderit commodo ex non excepteur duis sunt
-                      velit enim. Voluptate laboris sint cupidatat ullamco ut ea
-                      consectetur et est culpa et culpa duis.
-                    </Typography>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
+              {jobs.map((job) => {
+                return (
+                  <AccordionItem key={job.id} value={job.id.toString()}>
+                    <AccordionTrigger>
+                      <div className="flex w-full items-center gap-3 md:gap-6">
+                        <Typography
+                          className="basis-1/3 text-left text-gray04 md:basis-2/12"
+                          variant="span"
+                        >
+                          {job.period}
+                        </Typography>
+                        <div className="flex basis-5/6 flex-col gap-1 md:flex-row md:gap-6">
+                          <Typography
+                            className="basis-1/2 text-left text-gray05 dark:text-gray01"
+                            variant="h3"
+                          >
+                            {job.company}
+                          </Typography>
+                          <Typography
+                            className="basis-1/2 text-left text-gray05 dark:text-gray01"
+                            variant="p1"
+                          >
+                            {job.title}
+                          </Typography>
+                        </div>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <div className="flex flex-col rounded-xl bg-primary01 p-4 text-gray05 dark:bg-gray04 dark:text-gray01">
+                        <Typography variant="p2">
+                          {job.description.brief}
+                        </Typography>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                );
+              })}
             </Accordion>
           </article>
         </section>
