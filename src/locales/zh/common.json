@@ -54,5 +54,25 @@
         }
       ]
     }
+  },
+  "projects": {
+    "brief": "這些是我過去的作品，希望您會喜歡！",
+    "details": [
+      {
+        "id": 0,
+        "tags": ["React", "Tailwind"],
+        "title": "專案 0"
+      },
+      {
+        "id": 1,
+        "tags": ["React", "Tailwind"],
+        "title": "專案 1"
+      },
+      {
+        "id": 2,
+        "tags": ["React", "Tailwind"],
+        "title": "專案 2"
+      }
+    ]
   }
 }

@@ -54,5 +54,25 @@
         }
       ]
     }
+  },
+  "projects": {
+    "brief": "These are some of the projects I've worked on recently. Want to see more? Check out my Github.",
+    "details": [
+      {
+        "id": 0,
+        "tags": ["React", "Tailwind"],
+        "title": "Project 0"
+      },
+      {
+        "id": 1,
+        "tags": ["React", "Tailwind"],
+        "title": "Project 1"
+      },
+      {
+        "id": 2,
+        "tags": ["React", "Tailwind"],
+        "title": "Project 2"
+      }
+    ]
   }
 }

@@ -27,9 +27,11 @@ function App() {
           <Route index element={<About />} />
         </Route>
 
-        <Route path="/projects" element={<ContentLayout />}>
+        <Route path="/projects">
           <Route index element={<Projects />} />
-          <Route path=":name" element={<Project />} />
+          <Route path=":name" element={<ContentLayout />}>
+            <Route index element={<Project />} />
+          </Route>
         </Route>
 
         <Route path="*" element={<NotFound />} />

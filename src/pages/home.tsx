@@ -31,7 +31,6 @@ const Home = () => {
   const navigate = useNavigate();
 
   const jobs: JobItem[] = t('home.experience.jobs', { returnObjects: true });
-  console.log(jobs);
 
   return (
     <>
