@@ -1,5 +1,8 @@
 import { Card, CardImage, CardTags, CardTitle } from '@/components/card';
+import { FaChevronRight } from 'react-icons/fa6';
 import Typography from '@/components/typography';
+import { Button } from '@/components/ui/button';
+import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
 type ProjectItem = {
@@ -12,6 +15,8 @@ const Projects = () => {
   const projects: ProjectItem[] = t('projects.details', {
     returnObjects: true,
   });
+
+  const imageRef = useRef(null);
   return (
     <>
       {/* HERO */}
@@ -34,21 +39,27 @@ const Projects = () => {
       {/* HERO */}
 
       {/* PROJECTS */}
-      <section className="flex w-full max-w-5xl flex-col gap-28 pb-[3.5rem]">
+      <section className="mb-[3.5rem] flex w-full max-w-5xl flex-col gap-28 px-8 py-20 md:px-14 md:py-28">
         {projects.map((project) => {
           return (
-            <Card key={project.id}>
+            <Card key={project.id} projectId={project.id}>
               <CardImage />
-              <CardTags>
-                {project.tags.map((tag, index) => {
-                  return (
-                    <Typography key={`${index}-${tag}`} variant="span">
-                      {tag}
-                    </Typography>
-                  );
-                })}
-              </CardTags>
-              <CardTitle>{project.title}</CardTitle>
+              <div className="flex items-center justify-between">
+                <section className="flex flex-col gap-2">
+                  <CardTags>
+                    {project.tags.map((tag, index) => {
+                      return (
+                        <Typography key={`${index}-${tag}`} variant="span">
+                          {tag}
+                        </Typography>
+                      );
+                    })}
+                  </CardTags>
+                  <CardTitle>{project.title}</CardTitle>
+                </section>
+
+                <FaChevronRight />
+              </div>
             </Card>
           );
         })}
