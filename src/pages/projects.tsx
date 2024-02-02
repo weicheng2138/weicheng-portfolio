@@ -49,7 +49,11 @@ const Projects = () => {
                   <CardTags>
                     {project.tags.map((tag, index) => {
                       return (
-                        <Typography key={`${index}-${tag}`} variant="span">
+                        <Typography
+                          key={`${index}-${tag}`}
+                          variant="span"
+                          className="rounded bg-primary02 px-2 py-1 text-primary05"
+                        >
                           {tag}
                         </Typography>
                       );

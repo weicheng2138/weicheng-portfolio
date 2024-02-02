@@ -20,10 +20,7 @@ const Card = React.forwardRef<
     <Link to={`/projects/${props.projectId}`}>
       <div
         ref={ref}
-        className={cn(
-          'flex w-full flex-col gap-2 bg-card text-card-foreground',
-          className,
-        )}
+        className={cn('flex w-full flex-col gap-4', className)}
         {...rest}
       />
     </Link>
