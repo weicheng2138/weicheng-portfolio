@@ -2,13 +2,14 @@ import { useTranslation } from 'react-i18next';
 import { ModeToggle } from '@/components/mode-toggle';
 import { I18nToggle } from '@/components/i18n-toggle';
 import { Button } from '@/components/ui/button';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { HiCode, HiMenuAlt3, HiDownload } from 'react-icons/hi';
 import useBreakpoint from '@/hooks/useBreakpoint';
 import { cn } from '@/lib/utils';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import CustomLink from './custom-link';
 import Typography from './typography';
+import useScrollToAnchor from '@/hooks/useScrollToAnchor';
 
 type Props = {
   className?: string;
@@ -32,6 +33,9 @@ function Header({ handleDrawerClick, className }: Props) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isTop]);
 
+  // Handle anchor links scroll to
+  useScrollToAnchor();
+
   return (
     <header
       className={cn(
@@ -53,22 +57,22 @@ function Header({ handleDrawerClick, className }: Props) {
             <>
               <NavLink
                 className={({ isActive }) => (isActive ? 'text-primary' : '')}
-                to="/about"
+                to="/#hero-about"
               >
-                {t('nav.about')}
+                <Typography variant="button1">{t('nav.about')}</Typography>
               </NavLink>
               <NavLink
                 className={({ isActive }) => (isActive ? 'text-primary' : '')}
                 to="/projects"
               >
-                {t('nav.projects')}
+                <Typography variant="button1">{t('nav.projects')}</Typography>
               </NavLink>
               <CustomLink
                 href="http://www.google.com"
                 className="flex flex-row items-center gap-2 rounded-full border-2 border-gray05 px-4 py-2 transition-colors hover:bg-gray02 dark:border-gray02 hover:dark:bg-gray05"
               >
                 <HiDownload className="h-[1.2rem] w-[1.2rem]" />
-                {t('nav.resume')}
+                <Typography variant="button1">{t('nav.resume')}</Typography>
               </CustomLink>
 
               <section className="flex h-full items-center gap-1">

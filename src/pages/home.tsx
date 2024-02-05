@@ -39,7 +39,10 @@ const Home = () => {
       </header>
       <main className="flex w-full flex-col items-center">
         {/* HERO */}
-        <section className="flex w-full justify-center bg-gray02 dark:bg-gray05">
+        <section
+          id="hero-about"
+          className="flex w-full justify-center bg-gray02 dark:bg-gray05"
+        >
           <article
             className={cn(
               'flex w-full max-w-5xl flex-col items-center justify-center px-14 pb-[7.5rem] pt-40',

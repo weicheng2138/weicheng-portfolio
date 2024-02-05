@@ -8,7 +8,7 @@ const About = () => {
     <div>
       <Typography variant="h1">ABOUT</Typography>
       <h1 className="text-center">{t('author')}</h1>
-      <p>
+      <p id="p0">
         Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit
         enim labore culpa sint ad nisi Lorem pariatur mollit ex esse
         exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit
@@ -164,7 +164,7 @@ const About = () => {
         Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa
         et culpa duis.
       </p>
-      <a href="#p1">Go to p1</a>
+      <a href="#p0">Go to p0</a>
     </div>
   );
 };

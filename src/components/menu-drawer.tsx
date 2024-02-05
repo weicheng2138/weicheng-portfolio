@@ -8,7 +8,6 @@ import { HiX } from 'react-icons/hi';
 import { VscGithubInverted } from 'react-icons/vsc';
 import { RiLinkedinFill } from 'react-icons/ri';
 
-import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
@@ -108,7 +107,7 @@ const MenuDrawer = ({ show, handleClose }: Props) => {
 
             <div className="flex w-full flex-col items-center gap-2 p-2">
               {/* Links for sites */}
-              <CustomLink href="/about" className="w-full">
+              <CustomLink href="/#hero-about" className="w-full">
                 <Button
                   variant="social"
                   className="flex h-auto gap-2 py-4"
