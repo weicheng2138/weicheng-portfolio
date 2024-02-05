@@ -29,29 +29,16 @@ const Card = React.forwardRef<
 Card.displayName = 'Card';
 
 const CardImage = React.forwardRef<
-  HTMLImageElement,
-  React.HTMLAttributes<HTMLImageElement>
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div className="h-[17rem] w-full overflow-hidden rounded-lg">
-    <motion.img
-      ref={ref}
-      src="https://source.unsplash.com/random"
-      className={cn('h-full w-full object-cover', className)}
-      whileHover={{
-        scale: 1.1,
-        transition: { type: 'tween' },
-      }}
-    />
+  <div
+    ref={ref}
+    className={cn('h-[17rem] w-full overflow-hidden rounded-lg', className)}
+    {...props}
+  >
+    {props.children}
   </div>
-  // <div
-  //   ref={ref}
-  //   className={cn(
-  //     'h-[17rem] rounded-t-xl bg-cover bg-center bg-no-repeat',
-  //     className,
-  //     `bg-[url("https://source.unsplash.com/random")]`,
-  //   )}
-  //   {...props}
-  // />
 ));
 CardImage.displayName = 'CardImage';
 

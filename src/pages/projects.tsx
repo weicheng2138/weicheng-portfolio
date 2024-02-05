@@ -4,11 +4,17 @@ import Typography from '@/components/typography';
 import { Button } from '@/components/ui/button';
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 type ProjectItem = {
   id: number;
   title: string;
   tags: string[];
+  images: {
+    id: number;
+    src: string;
+  }[];
 };
 const Projects = () => {
   const { t } = useTranslation();
@@ -16,7 +22,6 @@ const Projects = () => {
     returnObjects: true,
   });
 
-  const imageRef = useRef(null);
   return (
     <>
       {/* HERO */}
@@ -43,7 +48,16 @@ const Projects = () => {
         {projects.map((project) => {
           return (
             <Card key={project.id} projectId={project.id}>
-              <CardImage />
+              <CardImage>
+                <motion.img
+                  src={project.images[0].src}
+                  className={cn('h-full w-full object-cover')}
+                  whileHover={{
+                    scale: 1.1,
+                    transition: { type: 'tween' },
+                  }}
+                />
+              </CardImage>
               <div className="flex items-center justify-between">
                 <section className="flex flex-col gap-2">
                   <CardTags>
