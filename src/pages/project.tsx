@@ -3,13 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { useParams, useSearchParams } from 'react-router-dom';
 
 type ProjectParams = {
-  name: string;
+  title: string;
 };
 const Project = () => {
   const { t } = useTranslation();
-  const { name } = useParams<ProjectParams>();
+  const { title } = useParams<ProjectParams>();
   const [searchParams, setSearchParams] = useSearchParams();
-  console.log(searchParams.get('q'));
+  console.log(title);
   return (
     <div>
       <Typography variant="h1">PROJECT</Typography>

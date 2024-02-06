@@ -16,39 +16,43 @@
         {
           "id": 0,
           "title": "Frontend Developer",
-          "company": "Web Design Company",
-          "period": "2019/01 - 2020/01",
+          "company": "President Information Corp.",
+          "period": "2021/10 - current",
           "description": {
-            "brief": "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at",
+            "brief": "In charge of developing frontend product and deal with some frontend issues.",
             "details": [
-              "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at",
-              "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at"
+              "Develop EC platform frontend and dashboard",
+              "Implement Google Speech-to-Text API to do the search for ec platform",
+              "Maintain X-Store"
             ]
           }
         },
         {
           "id": 1,
-          "title": "Frontend Developer",
-          "company": "Web Design Company",
-          "period": "2019/01 - 2020/01",
+          "title": "R&D Substitute",
+          "company": "National Taiwan University",
+          "period": "2017/08 - 2021/06",
           "description": {
-            "brief": "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at",
+            "brief": "Handle research projects and develop utils of software for lab.",
             "details": [
-              "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at",
-              "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at"
+              "Handle research projects on the topic of 3D shoe painting",
+              "Develop lab inventory management system through RFID",
+              "Control Six-axis robot arm",
+              "Side Project: Taifex data crawling and electron-vue desktop app"
             ]
           }
         },
         {
           "id": 2,
-          "title": "Frontend Developer",
-          "company": "Web Design Company",
-          "period": "2019/01 - 2020/01",
+          "title": "Co-founder & Software Developer",
+          "company": "Anhe Three Dimensional Corp.",
+          "period": "2015/08 - 2017/07",
           "description": {
-            "brief": "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at",
+            "brief": "Develop software for 3D printing.",
             "details": [
-              "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at",
-              "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at"
+              "Algorithm implementation through Java which is refer to Zhang (2015)",
+              "Design human interface for inkjet 3D printer with Vaadin and Three.js",
+              "Construct internal system with Angular 2, Spring Boot Rest API and using MySQL as data source."
             ]
           }
         }
@@ -60,8 +64,14 @@
     "details": [
       {
         "id": 0,
-        "tags": ["React", "Tailwind"],
-        "title": "Project 0",
+        "tags": [
+          "Next.js",
+          "Typescript",
+          "Chart.js",
+          "Swiper.js",
+          "Material UI"
+        ],
+        "title": "GUM Official Website and Dashboard",
         "images": [
           {
             "id": 0,
@@ -79,8 +89,8 @@
       },
       {
         "id": 1,
-        "tags": ["React", "Tailwind"],
-        "title": "Project 1",
+        "tags": ["Next.js", "Tailwind"],
+        "title": "Portfolio Website for a UI/UX Designer V2",
         "images": [
           {
             "id": 0,
@@ -98,8 +108,27 @@
       },
       {
         "id": 2,
-        "tags": ["React", "Tailwind"],
-        "title": "Project 2",
+        "tags": ["Vue", "Electron"],
+        "title": "Electron-Vue Desktop App",
+        "images": [
+          {
+            "id": 0,
+            "src": "https://placehold.co/600x600"
+          },
+          {
+            "id": 1,
+            "src": "https://placehold.co/600x400"
+          },
+          {
+            "id": 3,
+            "src": "https://placehold.co/600x400"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "tags": ["Vue", "Firebase", "Chart.js"],
+        "title": "Customized Dashboard for the crawling data from Taifex",
         "images": [
           {
             "id": 0,

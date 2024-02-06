@@ -29,7 +29,7 @@ function App() {
 
         <Route path="/projects">
           <Route index element={<Projects />} />
-          <Route path=":name" element={<ContentLayout />}>
+          <Route path=":title" element={<ContentLayout />}>
             <Route index element={<Project />} />
           </Route>
         </Route>

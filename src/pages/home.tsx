@@ -102,7 +102,7 @@ const Home = () => {
                             {job.company}
                           </Typography>
                           <Typography
-                            className="basis-1/2 text-left text-gray05 dark:text-gray01"
+                            className="basis-1/2 text-left text-gray04 dark:text-gray03"
                             variant="p1"
                           >
                             {job.title}
@@ -111,7 +111,7 @@ const Home = () => {
                       </div>
                     </AccordionTrigger>
                     <AccordionContent>
-                      <div className="flex flex-col rounded-xl bg-primary01 px-6 py-4 text-gray05 dark:bg-gray04 dark:text-gray01">
+                      <div className="flex flex-col rounded-xl bg-primary01 px-4 py-6 text-gray05 dark:bg-gray04 dark:text-gray01">
                         <Typography variant="p2">
                           {job.description.brief}
                         </Typography>

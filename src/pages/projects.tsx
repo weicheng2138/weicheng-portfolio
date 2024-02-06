@@ -6,16 +6,8 @@ import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
-type ProjectItem = {
-  id: number;
-  title: string;
-  tags: string[];
-  images: {
-    id: number;
-    src: string;
-  }[];
-};
 const Projects = () => {
   const { t } = useTranslation();
   const projects: ProjectItem[] = t('projects.details', {
@@ -47,38 +39,40 @@ const Projects = () => {
       <section className="mb-[3.5rem] flex w-full max-w-5xl flex-col gap-28 px-8 py-20 md:px-14 md:py-28">
         {projects.map((project) => {
           return (
-            <Card key={project.id} projectId={project.id}>
-              <CardImage>
-                <motion.img
-                  src={project.images[0].src}
-                  className={cn('h-full w-full object-cover')}
-                  whileHover={{
-                    scale: 1.1,
-                    transition: { type: 'tween' },
-                  }}
-                />
-              </CardImage>
-              <div className="flex items-center justify-between">
-                <section className="flex flex-col gap-2">
-                  <CardTags>
-                    {project.tags.map((tag, index) => {
-                      return (
-                        <Typography
-                          key={`${index}-${tag}`}
-                          variant="span"
-                          className="rounded bg-primary02 px-2 py-1 text-primary05"
-                        >
-                          {tag}
-                        </Typography>
-                      );
-                    })}
-                  </CardTags>
-                  <CardTitle>{project.title}</CardTitle>
-                </section>
+            <Link key={project.id} to={`/projects/${project.id}`}>
+              <Card>
+                <CardImage>
+                  <motion.img
+                    src={project.images[0].src}
+                    className={cn('h-full w-full object-cover')}
+                    whileHover={{
+                      scale: 1.1,
+                      transition: { type: 'tween' },
+                    }}
+                  />
+                </CardImage>
+                <div className="flex items-center justify-between">
+                  <section className="flex flex-col gap-2">
+                    <CardTags>
+                      {project.tags.map((tag, index) => {
+                        return (
+                          <Typography
+                            key={`${index}-${tag}`}
+                            variant="span"
+                            className="rounded bg-primary02 px-2 py-1 text-primary05"
+                          >
+                            {tag}
+                          </Typography>
+                        );
+                      })}
+                    </CardTags>
+                    <CardTitle>{project.title}</CardTitle>
+                  </section>
 
-                <FaChevronRight />
-              </div>
-            </Card>
+                  <FaChevronRight />
+                </div>
+              </Card>
+            </Link>
           );
         })}
       </section>

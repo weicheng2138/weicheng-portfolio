@@ -11,19 +11,33 @@ type SlotProps = {
   className?: string;
 };
 
+// INFO: This is not a good implementation which is wrapped with Link in the Card component
+// const Card = React.forwardRef<
+//   HTMLDivElement,
+//   React.HTMLAttributes<HTMLDivElement> & { projectId: number }
+// >(({ className, ...props }, ref) => {
+//   const { projectId: _, ...rest } = props;
+//   return (
+//     <Link to={`/projects/${props.projectId}`}>
+//       <div
+//         ref={ref}
+//         className={cn('flex w-full flex-col gap-4', className)}
+//         {...rest}
+//       />
+//     </Link>
+//   );
+// });
+// Card.displayName = 'Card';
 const Card = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & { projectId: number }
+  React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => {
-  const { projectId: _, ...rest } = props;
   return (
-    <Link to={`/projects/${props.projectId}`}>
-      <div
-        ref={ref}
-        className={cn('flex w-full flex-col gap-4', className)}
-        {...rest}
-      />
-    </Link>
+    <div
+      ref={ref}
+      className={cn('flex w-full flex-col gap-4', className)}
+      {...props}
+    />
   );
 });
 Card.displayName = 'Card';
