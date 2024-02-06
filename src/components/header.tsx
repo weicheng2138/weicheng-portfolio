@@ -16,7 +16,7 @@ type Props = {
   handleDrawerClick: () => void;
 };
 function Header({ handleDrawerClick, className }: Props) {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   const breakpoint = useBreakpoint();
 
   // Detect scroll position

@@ -26,7 +26,7 @@ type Props = {
   handleClose: () => void;
 };
 const MenuDrawer = ({ show, handleClose }: Props) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   const bodyRef = useRef(document.querySelector('body'));
   const drawerPortalRef = useRef(
     document.getElementById('drawer-root') || createDrawerPortal(),

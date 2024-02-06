@@ -27,7 +27,7 @@ type JobItem = {
 };
 const Home = () => {
   console.log('Home rendered');
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   const navigate = useNavigate();
 
   const jobs: JobItem[] = t('home.experience.jobs', { returnObjects: true });

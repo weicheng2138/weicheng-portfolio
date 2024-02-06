@@ -9,16 +9,17 @@ import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 
 const Projects = () => {
-  const { t } = useTranslation();
-  const projects: ProjectItem[] = t('projects.details', {
+  const { t } = useTranslation('projects');
+  const projects: ProjectItem[] = t('details', {
     returnObjects: true,
   });
+  console.log(projects);
 
   return (
     <>
       {/* HERO */}
       <header className="flex h-dvh w-full max-w-5xl flex-col items-start justify-center gap-8 p-8 md:p-14">
-        <Typography variant="h1">{t('nav.projects')}</Typography>
+        <Typography variant="h1">{t('title')}</Typography>
         <Typography variant="p1">
           Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit
           enim labore culpa sint ad nisi Lorem pariatur mollit ex esse

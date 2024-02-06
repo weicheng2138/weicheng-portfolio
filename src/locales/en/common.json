@@ -59,6 +59,9 @@
       ]
     }
   },
+  "not-found": {
+    "content": "Oops! The page you are looking for has been removed or relocated."
+  },
   "projects": {
     "brief": "These are some of the projects I've worked on recently. Want to see more? Check out my Github.",
     "details": [

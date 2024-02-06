@@ -1,5 +1,6 @@
 import Typography from '@/components/typography';
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { TbError404 } from 'react-icons/tb';
 import {
   isRouteErrorResponse,
@@ -8,6 +9,7 @@ import {
 } from 'react-router-dom';
 
 const NotFound = () => {
+  const { t } = useTranslation('common');
   const navigate = useNavigate();
   const error = useRouteError() as null | unknown;
   let errorMessage: string;
@@ -22,6 +24,7 @@ const NotFound = () => {
   } else {
     errorMessage = 'Unknown error';
   }
+
   useEffect(() => {
     const timerId = setTimeout(() => {
       navigate('/');
@@ -32,9 +35,11 @@ const NotFound = () => {
   return (
     <>
       <div className="relative z-10 flex h-dvh w-full justify-center pb-[3.5rem] pt-[4.5rem]">
-        <section className="flex h-full w-full max-w-5xl flex-col items-center justify-center">
+        <section className="flex h-full w-full max-w-5xl flex-col items-center justify-center px-2">
           <TbError404 className="h-40 w-40" />
-          <Typography variant="h1">Page Not Found</Typography>
+          <Typography variant="h2" className="max-w-96 text-center">
+            {t('not-found.content')}
+          </Typography>
           {error !== null && (
             <Typography variant="p1">{errorMessage}</Typography>
           )}

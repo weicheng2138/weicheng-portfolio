@@ -1,0 +1,63 @@
+{
+  "title": "專案內容",
+  "brief": "這些是我過去的開發過的專案！",
+  "details": [
+    {
+      "id": 0,
+      "tags": ["Next.js", "Typescript", "Chart.js", "Swiper.js", "Material UI"],
+      "title": "GUM 官方網站與後台",
+      "images": [
+        {
+          "id": 0,
+          "src": "https://placehold.co/600x400"
+        },
+        {
+          "id": 1,
+          "src": "https://placehold.co/600x400"
+        },
+        {
+          "id": 3,
+          "src": "https://placehold.co/600x400"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "tags": ["React", "Tailwind"],
+      "title": "專案 1",
+      "images": [
+        {
+          "id": 0,
+          "src": "https://placehold.co/600x400"
+        },
+        {
+          "id": 1,
+          "src": "https://placehold.co/600x400"
+        },
+        {
+          "id": 3,
+          "src": "https://placehold.co/600x400"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "tags": ["React", "Tailwind"],
+      "title": "專案 2",
+      "images": [
+        {
+          "id": 0,
+          "src": "https://placehold.co/600x400"
+        },
+        {
+          "id": 1,
+          "src": "https://placehold.co/600x400"
+        },
+        {
+          "id": 3,
+          "src": "https://placehold.co/600x400"
+        }
+      ]
+    }
+  ]
+}
