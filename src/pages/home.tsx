@@ -110,8 +110,9 @@ const Home = () => {
                         </div>
                       </div>
                     </AccordionTrigger>
-                    <AccordionContent>
-                      <div className="flex flex-col rounded-xl bg-primary01 px-4 py-6 text-gray05 dark:bg-gray04 dark:text-gray01">
+                    <AccordionContent className="flex md:gap-6">
+                      <span className="md:basis-1/6" />
+                      <div className="flex w-full flex-col rounded-xl bg-primary01 px-4 py-6 text-gray05 dark:bg-gray04 dark:text-gray01">
                         <Typography variant="p2">
                           {job.description.brief}
                         </Typography>
