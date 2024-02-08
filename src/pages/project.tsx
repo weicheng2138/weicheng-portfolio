@@ -7,9 +7,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   type CarouselApi,
+  CarouselDotNavigation,
 } from '@/components/ui/carousel';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
@@ -23,50 +22,18 @@ const Project = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
-
-    api.on('select', () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
   return (
-    <div>
+    <div className="px-8 md:px-14">
       <Typography variant="h1">PROJECT</Typography>
-      <h1 className="text-center">{t('author')}</h1>
 
       <div className="flex flex-col">
-        {searchParams.get('q')}
-        {searchParams.getAll('arr')}
-        <button
-          onClick={() => {
-            setSearchParams({ q: 'TOTOTO' });
-          }}
-        >
-          Change query to TOTOTO
-        </button>
-        <button
-          onClick={() => {
-            setSearchParams({ q: 'test' });
-          }}
-        >
-          Change query to test
-        </button>
-
-        <Carousel setApi={setApi} className="w-full max-w-xs">
+        <Carousel setApi={setApi} className="w-full">
           <CarouselContent>
             {Array.from({ length: 5 }).map((_, index) => (
               <CarouselItem key={index}>
                 <Card>
-                  <CardImage>
+                  <CardImage className="h-[308px]">
                     <motion.img
                       src="https://placehold.co/600x400"
                       className={cn('h-full w-full object-cover')}
@@ -80,12 +47,11 @@ const Project = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselDotNavigation />
         </Carousel>
-        <div className="py-2 text-center text-sm text-muted-foreground">
-          Slide {current} of {count}
-        </div>
+        {/* <div className="py-2 text-center text-sm text-muted-foreground"> */}
+        {/*   Slide {current} of {count} */}
+        {/* </div> */}
       </div>
     </div>
   );
