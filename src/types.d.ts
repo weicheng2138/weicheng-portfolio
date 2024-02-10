@@ -1,5 +1,5 @@
 declare type ProjectItem = {
-  id: number;
+  id: string;
   title: string;
   tags: string[];
   images: {

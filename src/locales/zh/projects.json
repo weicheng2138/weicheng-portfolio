@@ -3,7 +3,7 @@
   "brief": "這些是我過去的開發過的專案！",
   "details": [
     {
-      "id": 0,
+      "id": "GUM-Official-Website-and-Dashboard",
       "tags": ["Next.js", "Typescript", "Chart.js", "Swiper.js", "Material UI"],
       "title": "GUM 官方網站與後台",
       "images": [
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "id": 1,
+      "id": "Portfolio-Website-for-a-UI-UX-Designer-V2",
       "tags": ["React", "Tailwind"],
       "title": "專案 1",
       "images": [
@@ -41,7 +41,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "Customized-Dashboard-for-the-crawling-data-from-Taifex",
       "tags": ["React", "Tailwind"],
       "title": "專案 2",
       "images": [

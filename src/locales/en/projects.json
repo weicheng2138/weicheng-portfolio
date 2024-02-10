@@ -3,7 +3,7 @@
   "brief": "These are some of the projects I've worked on recently. Want to see more? Check out my Github.",
   "details": [
     {
-      "id": 0,
+      "id": "GUM-Official-Website-and-Dashboard",
       "tags": ["Next.js", "Typescript", "Chart.js", "Swiper.js", "Material UI"],
       "title": "GUM Official Website and Dashboard",
       "images": [
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "id": 1,
+      "id": "Portfolio-Website-for-a-UI-UX-Designer-V2",
       "tags": ["Next.js", "Tailwind"],
       "title": "Portfolio Website for a UI/UX Designer V2",
       "images": [
@@ -41,7 +41,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "Electron-Vue-Desktop-App",
       "tags": ["Vue", "Electron"],
       "title": "Electron-Vue Desktop App",
       "images": [
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "Customized-Dashboard-for-the-crawling-data-from-Taifex",
       "tags": ["Vue", "Firebase", "Chart.js"],
       "title": "Customized Dashboard for the crawling data from Taifex",
       "images": [

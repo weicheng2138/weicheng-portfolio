@@ -59,6 +59,10 @@
       ]
     }
   },
+  "project": {
+    "back-button": "返回專案列表",
+    "project-not-found": "找不到該名稱的專案，請返回專案列表。"
+  },
   "not-found": {
     "content": "抱歉，找不到您要的頁面！"
   }

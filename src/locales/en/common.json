@@ -59,6 +59,10 @@
       ]
     }
   },
+  "project": {
+    "back-button": "Back to Projects",
+    "project-not-found": "Project not found"
+  },
   "not-found": {
     "content": "Oops! The page you are looking for has been removed or relocated."
   }
