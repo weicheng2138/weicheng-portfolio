@@ -1,3 +1,15 @@
+type BulletPointContent = {
+  isBulletPoint: true;
+  title: string;
+  bulletPoints: string[];
+};
+
+type StringContent = {
+  isBulletPoint: false;
+  title: string;
+  content: string;
+};
+
 declare type ProjectItem = {
   id: string;
   title: string;
@@ -6,9 +18,5 @@ declare type ProjectItem = {
     id: number;
     src: string;
   }[];
-  contents: {
-    title: string;
-    content?: string;
-    bulletPoints?: string[];
-  }[];
+  contents: (BulletPointContent | StringContent)[];
 };

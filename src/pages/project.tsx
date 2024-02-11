@@ -98,22 +98,21 @@ const Project = () => {
                   <Typography variant="h3" className="mb-6">
                     {content.title}
                   </Typography>
-                  {content.content ? (
-                    <Typography variant="p2">{content.content}</Typography>
-                  ) : (
+                  {content.isBulletPoint ? (
                     <ul>
-                      {content.bulletPoints &&
-                        content.bulletPoints.map((point, index) => {
-                          return (
-                            <li
-                              key={`${index}-${point}`}
-                              className="ml-5 list-disc"
-                            >
-                              <Typography variant="p2">{point}</Typography>
-                            </li>
-                          );
-                        })}
+                      {content.bulletPoints.map((point, index) => {
+                        return (
+                          <li
+                            key={`${index}-${point}`}
+                            className="ml-5 list-disc"
+                          >
+                            <Typography variant="p2">{point}</Typography>
+                          </li>
+                        );
+                      })}
                     </ul>
+                  ) : (
+                    <Typography variant="p2">{content.content}</Typography>
                   )}
                   {/* <Typography variant="p1">{content.}</Typography> */}
                 </div>

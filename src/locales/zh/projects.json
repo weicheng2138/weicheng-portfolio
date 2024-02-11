@@ -22,10 +22,12 @@
       ],
       "contents": [
         {
+          "isBulletPoint": false,
           "title": "專案簡介1",
           "content": "GUM 是一個專門提供線上課程的平台，我負責開發官方網站與後台。"
         },
         {
+          "isBulletPoint": true,
           "title": "專案簡介2",
           "bulletPoints": [
             "官方網站提供了課程的介紹與報名功能。",
@@ -33,6 +35,7 @@
           ]
         },
         {
+          "isBulletPoint": false,
           "title": "技術細節3",
           "content": "官方網站使用 Next.js 作為前端框架，並使用 Typescript 作為開發語言。後台使用 Material UI 作為 UI 框架，並使用 Chart.js 與 Swiper.js 作為圖表與輪播的套件。"
         }
@@ -56,23 +59,7 @@
           "src": "https://placehold.co/600x400"
         }
       ],
-      "contents": [
-        {
-          "title": "專案簡介1",
-          "content": "GUM 是一個專門提供線上課程的平台，我負責開發官方網站與後台。"
-        },
-        {
-          "title": "專案簡介2",
-          "bulletPoints": [
-            "官方網站提供了課程的介紹與報名功能。",
-            "後台提供了課程的管理與報名資料的查詢。"
-          ]
-        },
-        {
-          "title": "技術細節3",
-          "content": "官方網站使用 Next.js 作為前端框架，並使用 Typescript 作為開發語言。後台使用 Material UI 作為 UI 框架，並使用 Chart.js 與 Swiper.js 作為圖表與輪播的套件。"
-        }
-      ]
+      "contents": []
     },
     {
       "id": "Electron-Vue-Desktop-App",

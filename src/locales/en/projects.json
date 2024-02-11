@@ -22,10 +22,12 @@
       ],
       "contents": [
         {
+          "isBulletPoint": false,
           "title": "Project Introduction",
           "content": "GUM is a project which is an outsource project from a company. The project is to build an official website and a dashboard for the company. The official website provides the introduction of the courses and the registration function. The dashboard provides the management of the courses and the query of the registration data."
         },
         {
+          "isBulletPoint": true,
           "title": "Project Run Down",
           "bulletPoints": [
             "Construct site product pages with RWD design.",
