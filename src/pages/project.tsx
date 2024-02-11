@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Typography from '@/components/typography';
 import { useTranslation } from 'react-i18next';
 import { Link, useParams } from 'react-router-dom';
@@ -25,17 +25,15 @@ const Project = () => {
   const { t } = useTranslation('common');
   const { t: tProjects } = useTranslation('projects');
   const { title } = useParams<ProjectParams>();
+  const projects: ProjectItem[] = tProjects('details', {
+    returnObjects: true,
+  });
+  const project = projects.find((project) => project.id === title);
 
   const [api, setApi] = useState<CarouselApi>();
   const carouselPlugin = useRef(
     Autoplay({ delay: 2000, stopOnInteraction: false, stopOnMouseEnter: true }),
   );
-  // const [project, setProject] = useState<ProjectItem | null>(null);
-  const projects: ProjectItem[] = tProjects('details', {
-    returnObjects: true,
-  });
-
-  const project = projects.find((project) => project.id === title);
 
   return (
     <div className="h-full w-full px-8 md:px-14">
@@ -71,7 +69,7 @@ const Project = () => {
             <Carousel
               plugins={[carouselPlugin.current]}
               setApi={setApi}
-              className="w-full"
+              className="w-full hover:cursor-grab active:cursor-grabbing"
             >
               <CarouselContent>
                 {Array.from({ length: 5 }).map((_, index) => (
