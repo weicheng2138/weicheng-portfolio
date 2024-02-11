@@ -19,6 +19,19 @@
           "id": 3,
           "src": "https://placehold.co/600x400"
         }
+      ],
+      "contents": [
+        {
+          "title": "Project Introduction",
+          "content": "GUM is a project which is an outsource project from a company. The project is to build an official website and a dashboard for the company. The official website provides the introduction of the courses and the registration function. The dashboard provides the management of the courses and the query of the registration data."
+        },
+        {
+          "title": "Project Run Down",
+          "bulletPoints": [
+            "Construct site product pages with RWD design.",
+            "Construct common pages such as about us, contact us, and so on."
+          ]
+        }
       ]
     },
     {
@@ -38,7 +51,8 @@
           "id": 3,
           "src": "https://placehold.co/600x400"
         }
-      ]
+      ],
+      "contents": []
     },
     {
       "id": "Electron-Vue-Desktop-App",
@@ -57,7 +71,8 @@
           "id": 3,
           "src": "https://placehold.co/600x400"
         }
-      ]
+      ],
+      "contents": []
     },
     {
       "id": "Customized-Dashboard-for-the-crawling-data-from-Taifex",
@@ -76,7 +91,8 @@
           "id": 3,
           "src": "https://placehold.co/600x400"
         }
-      ]
+      ],
+      "contents": []
     }
   ]
 }

@@ -6,4 +6,9 @@ declare type ProjectItem = {
     id: number;
     src: string;
   }[];
+  contents: {
+    title: string;
+    content?: string;
+    bulletPoints?: string[];
+  }[];
 };

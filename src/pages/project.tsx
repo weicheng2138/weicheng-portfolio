@@ -48,7 +48,7 @@ const Project = () => {
 
       {project ? (
         <>
-          <section className="mb-20 flex flex-col gap-2">
+          <section className="mb-10 flex flex-col gap-2 md:mb-20">
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag, index) => {
                 return (
@@ -65,36 +65,61 @@ const Project = () => {
             <Typography variant="h2">{project.title}</Typography>
           </section>
 
-          <div className="flex flex-col">
-            <Carousel
-              plugins={[carouselPlugin.current]}
-              setApi={setApi}
-              className="w-full hover:cursor-grab active:cursor-grabbing"
-            >
-              <CarouselContent>
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <CarouselItem key={index}>
-                    <Card>
-                      <CardImage className="h-[308px]">
-                        <motion.img
-                          src="https://placehold.co/600x400"
-                          className={cn('h-full w-full object-cover')}
-                          whileHover={{
-                            scale: 1.1,
-                            transition: { type: 'tween' },
-                          }}
-                        />
-                      </CardImage>
-                    </Card>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselDotNavigation />
-            </Carousel>
-            {/* <div className="py-2 text-center text-sm text-muted-foreground"> */}
-            {/*   Slide {current} of {count} */}
-            {/* </div> */}
-          </div>
+          <Carousel
+            plugins={[carouselPlugin.current]}
+            setApi={setApi}
+            className="mb-10 w-full hover:cursor-grab active:cursor-grabbing md:mb-20"
+          >
+            <CarouselContent>
+              {Array.from({ length: 5 }).map((_, index) => (
+                <CarouselItem key={index}>
+                  <Card>
+                    <CardImage className="h-[308px]">
+                      <motion.img
+                        src="https://placehold.co/600x400"
+                        className={cn('h-full w-full object-cover')}
+                        whileHover={{
+                          scale: 1.1,
+                          transition: { type: 'tween' },
+                        }}
+                      />
+                    </CardImage>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselDotNavigation />
+          </Carousel>
+
+          <section>
+            {project.contents.map((content, index) => {
+              return (
+                <div key={`${index}-${content.title}`} className="mb-10">
+                  <Typography variant="h3" className="mb-6">
+                    {content.title}
+                  </Typography>
+                  {content.content ? (
+                    <Typography variant="p2">{content.content}</Typography>
+                  ) : (
+                    <ul>
+                      {content.bulletPoints &&
+                        content.bulletPoints.map((point, index) => {
+                          return (
+                            <li
+                              key={`${index}-${point}`}
+                              className="ml-5 list-disc"
+                            >
+                              <Typography variant="p2">{point}</Typography>
+                            </li>
+                          );
+                        })}
+                    </ul>
+                  )}
+                  {/* <Typography variant="p1">{content.}</Typography> */}
+                </div>
+              );
+            })}
+          </section>
         </>
       ) : (
         <div className="mt-20 flex flex-col items-center justify-center gap-2">
