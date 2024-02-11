@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Typography from '@/components/typography';
 import { useTranslation } from 'react-i18next';
-import { Link, useParams, useSearchParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Card, CardImage } from '@/components/card';
 import { FaChevronLeft } from 'react-icons/fa6';
 import { TbFolderQuestion } from 'react-icons/tb';
@@ -12,6 +12,7 @@ import {
   type CarouselApi,
   CarouselDotNavigation,
 } from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -26,20 +27,15 @@ const Project = () => {
   const { title } = useParams<ProjectParams>();
 
   const [api, setApi] = useState<CarouselApi>();
-  const [project, setProject] = useState<ProjectItem | null>(null);
+  const carouselPlugin = useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: false, stopOnMouseEnter: true }),
+  );
+  // const [project, setProject] = useState<ProjectItem | null>(null);
   const projects: ProjectItem[] = tProjects('details', {
     returnObjects: true,
   });
-  console.log(projects);
 
-  useEffect(() => {
-    console.log(title);
-    if (!title || !projects) return;
-
-    const targetProject = projects.find((project) => project.id === title);
-    if (!targetProject) return;
-    setProject((prev) => targetProject);
-  }, [title]);
+  const project = projects.find((project) => project.id === title);
 
   return (
     <div className="h-full w-full px-8 md:px-14">
@@ -54,12 +50,29 @@ const Project = () => {
 
       {project ? (
         <>
-          <section className="flex flex-col gap-1">
-            <Typography variant="h2">{project?.title}</Typography>
+          <section className="mb-20 flex flex-col gap-2">
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag, index) => {
+                return (
+                  <Typography
+                    key={`${index}-${tag}`}
+                    variant="span"
+                    className="rounded bg-primary02 px-2 py-[6px] text-primary05"
+                  >
+                    {tag}
+                  </Typography>
+                );
+              })}
+            </div>
+            <Typography variant="h2">{project.title}</Typography>
           </section>
 
           <div className="flex flex-col">
-            <Carousel setApi={setApi} className="w-full">
+            <Carousel
+              plugins={[carouselPlugin.current]}
+              setApi={setApi}
+              className="w-full"
+            >
               <CarouselContent>
                 {Array.from({ length: 5 }).map((_, index) => (
                   <CarouselItem key={index}>
@@ -88,7 +101,9 @@ const Project = () => {
       ) : (
         <div className="mt-20 flex flex-col items-center justify-center gap-2">
           <TbFolderQuestion className="h-10 w-10" />
-          <Typography variant="p1">{t('project.project-not-found')}</Typography>
+          <Typography variant="p1" className="text-xs">
+            {t('project.project-not-found')}
+          </Typography>
         </div>
       )}
     </div>
