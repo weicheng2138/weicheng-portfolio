@@ -1,9 +1,6 @@
 import { ThemeProvider } from '@/components/theme-provider';
 import {
   Route,
-  Routes,
-  useRoutes,
-  RouteObject,
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,

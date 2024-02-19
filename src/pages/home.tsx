@@ -144,7 +144,7 @@ const Home = () => {
               'md:flex-row md:items-start md:gap-10',
             )}
           >
-            <div className="mb-28 md:mb-0">
+            <div className="mb-28 md:mb-0 md:basis-1/2">
               <Typography variant="h1" className="mb-8">
                 {t('home.contact-title')}
               </Typography>
@@ -152,7 +152,7 @@ const Home = () => {
                 {t('home.contact-content')}
               </Typography>
             </div>
-            <div className="flex w-full flex-col gap-2">
+            <div className="flex w-full flex-col gap-2 md:basis-1/2">
               <CustomLink href="https://github.com/weicheng2138">
                 <Button variant="social" className="flex h-auto gap-2 py-4">
                   <VscGithubInverted className="h-[1.25rem] w-[1.25rem]" />

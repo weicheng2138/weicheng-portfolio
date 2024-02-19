@@ -17,8 +17,8 @@ A playful version of portfolio app. Almost care every detail of the site.
 
 ## Stacks
 
-- [x] 🌊 [Tailwindcss](https://tailwindcss.nuxt.dev/)
 - [x] 🌘 [shadcn](https://ui.shadcn.com/), with lovely customized ui and fluent developing experience.
+- [x] 🌊 [Tailwindcss](https://tailwindcss.com/)
 - [x] 👾 [Framer Motion](https://www.framer.com/motion/)
 - [x] ⚛️ [Embla Carousel](https://www.embla-carousel.com/)
 - [x] 🌏 [i18n Next](https://react.i18next.com/)
@@ -43,4 +43,10 @@ pnpm build
 pnpm preview
 ```
 
-You can start editing entry point by modifying `src/main.tsx`. The page auto-updates as you edit the file.
+## Some reminders
+
+- You can start editing entry point by modifying `src/main.tsx`. The page auto-updates as you edit the file.
+- Theme is based on shadcn and modify it to my [theme](https://ui.shadcn.com/themes).
+- `Typography` component is well handled.
+- We have `cn` function in `lib/utils.ts` to help us to merge className and clsx to do more flexible conditioning.
+- React `forwardRef`, `createPortal`
