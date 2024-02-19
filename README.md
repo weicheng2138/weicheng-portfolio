@@ -1,27 +1,46 @@
-# React + TypeScript + Vite
+# Weicheng's Portfolio V2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<!-- ![Vercel](https://vercelbadge.vercel.app/api/weicheng2138/portfolio-weitsao-v2) -->
 
-Currently, two official plugins are available:
+A playful version of portfolio app. Almost care every detail of the site.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎨 Color Reference
 
-## Expanding the ESLint configuration
+| Color     | Hex                                                                | Color  | Hex                                                                |
+| --------- | ------------------------------------------------------------------ | ------ | ------------------------------------------------------------------ |
+| primary01 | ![#F4F9FB](https://via.placeholder.com/10/F4F9FB?text=+) `#F4F9FB` | gray01 | ![#FCFCFC](https://via.placeholder.com/10/FCFCFC?text=+) `#FCFCFC` |
+| primary02 | ![#E2F4F8](https://via.placeholder.com/10/E2F4F8?text=+) `#E2F4F8` | gray02 | ![#F4F4F4](https://via.placeholder.com/10/F4F4F4?text=+) `#F4F4F4` |
+| primary03 | ![#3FB1E8](https://via.placeholder.com/10/3FB1E8?text=+) `#3FB1E8` | gray03 | ![#D9D9D9](https://via.placeholder.com/10/D9D9D9?text=+) `#D9D9D9` |
+| primary04 | ![#1682B6](https://via.placeholder.com/10/1682B6?text=+) `#1682B6` | gray04 | ![#888888](https://via.placeholder.com/10/888888?text=+) `#888888` |
+| primary05 | ![#50585C](https://via.placeholder.com/10/50585C?text=+) `#50585C` | gray05 | ![#4D4D4D](https://via.placeholder.com/10/4D4D4D?text=+) `#4D4D4D` |
+|           |                                                                    | gray06 | ![#3D3D3D](https://via.placeholder.com/10/3D3D3D?text=+) `#3D3D3D` |
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Stacks
 
-- Configure the top-level `parserOptions` property like this:
+- [x] 🌊 [Tailwindcss](https://tailwindcss.nuxt.dev/)
+- [x] 🌘 [shadcn](https://ui.shadcn.com/), with lovely customized ui and fluent developing experience.
+- [x] 👾 [Framer Motion](https://www.framer.com/motion/)
+- [x] ⚛️ [Embla Carousel](https://www.embla-carousel.com/)
+- [x] 🌏 [i18n Next](https://react.i18next.com/)
+- [x] ✨ Eslint & prettier
+- [x] ✏️ cz (with commitizen installed globally)
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+## Getting Started
+
+First, run the development server:
+
+```bash
+# install
+pnpm install
+
+# dev
+pnpm dev
+
+# build
+pnpm build
+
+# serve
+pnpm preview
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+You can start editing entry point by modifying `src/main.tsx`. The page auto-updates as you edit the file.
