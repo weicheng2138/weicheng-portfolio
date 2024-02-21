@@ -16,6 +16,7 @@ import Autoplay from 'embla-carousel-autoplay';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { Helmet } from 'react-helmet';
 
 type ProjectParams = {
   title: string;
@@ -37,6 +38,11 @@ const Project = () => {
 
   return (
     <div className="h-full w-full px-8 md:px-14">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{project ? project.title : t('nav.projects')}</title>
+        <link rel="canonical" href="https://weicheng.dev/projects" />
+      </Helmet>
       <Link to="/projects">
         <Button variant="ghost" className="mb-8">
           <FaChevronLeft />

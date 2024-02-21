@@ -14,6 +14,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { Helmet } from 'react-helmet';
 
 type JobItem = {
   id: number;
@@ -34,6 +35,12 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{t('author')}</title>
+        <link rel="canonical" href="https://weicheng.dev" />
+      </Helmet>
+
       <header className="flex h-dvh items-center justify-center">
         <TextRoller />
       </header>

@@ -22,6 +22,7 @@ A playful version of portfolio app. Almost care every detail of the site.
 - [x] 👾 [Framer Motion](https://www.framer.com/motion/)
 - [x] ⚛️ [Embla Carousel](https://www.embla-carousel.com/)
 - [x] 🌏 [i18n Next](https://react.i18next.com/)
+- [x] 🪖 [React Helmet](https://github.com/nfl/react-helmet)
 - [x] ✨ Eslint & prettier
 - [x] ✏️ cz (with commitizen installed globally)
 

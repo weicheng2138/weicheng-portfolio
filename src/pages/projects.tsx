@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const Projects = () => {
   const { t } = useTranslation('projects');
@@ -17,6 +18,12 @@ const Projects = () => {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{t('title')}</title>
+        <link rel="canonical" href="https://weicheng.dev/projects" />
+      </Helmet>
+
       {/* HERO */}
       <header className="flex h-dvh w-full max-w-5xl flex-col items-start justify-center gap-8 p-8 md:p-14">
         <Typography variant="h1">{t('title')}</Typography>
