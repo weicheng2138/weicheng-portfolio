@@ -14,7 +14,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
+import { motion } from 'framer-motion';
 
 type JobItem = {
   id: number;
@@ -44,15 +45,21 @@ const Home = () => {
       <header className="flex h-dvh items-center justify-center">
         <TextRoller />
       </header>
-      <main className="flex w-full flex-col items-center">
+      <main className="flex w-full flex-col items-center overflow-x-hidden">
         {/* HERO */}
         <section
           id="hero-about"
-          className="flex w-full justify-center bg-gray02 dark:bg-gray05"
+          className="flex w-full justify-center bg-gray02  pb-[7.5rem] pt-40 dark:bg-gray05"
         >
-          <article
+          <motion.article
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: { duration: 1, type: 'spring' },
+            }}
             className={cn(
-              'flex w-full max-w-5xl flex-col items-center justify-center px-14 pb-[7.5rem] pt-40',
+              'flex w-full max-w-5xl flex-col items-center justify-center px-14',
               'md:flex-row md:items-start md:gap-10',
             )}
           >
@@ -77,15 +84,21 @@ const Home = () => {
                 </CustomLink>
               </div>
             </div>
-          </article>
+          </motion.article>
         </section>
         {/* HERO */}
 
         {/* EXPERIENCE */}
-        <section className="flex w-full justify-center">
-          <article
+        <section className="flex w-full justify-center py-[7.5rem]">
+          <motion.article
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: { duration: 1, type: 'spring' },
+            }}
             className={cn(
-              'flex w-full max-w-5xl flex-col items-center justify-center px-8 py-[7.5rem]',
+              'flex w-full max-w-5xl flex-col items-center justify-center px-8',
               'md:px-14',
             )}
           >
@@ -139,15 +152,21 @@ const Home = () => {
                 );
               })}
             </Accordion>
-          </article>
+          </motion.article>
         </section>
         {/* EXPERIENCE */}
 
         {/* CONTACT ME */}
-        <section className="flex w-full justify-center bg-gray02 pb-[3.5rem] dark:bg-gray05">
-          <article
+        <section className="flex w-full justify-center bg-gray02 pb-[3.5rem] pt-40 dark:bg-gray05">
+          <motion.article
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: { duration: 1, type: 'spring' },
+            }}
             className={cn(
-              'flex w-full max-w-5xl flex-col items-center justify-center px-14 pb-[7.5rem] pt-40',
+              'flex w-full max-w-5xl flex-col items-center justify-center px-14 pb-[7.5rem]',
               'md:flex-row md:items-start md:gap-10',
             )}
           >
@@ -180,7 +199,7 @@ const Home = () => {
                 </Button>
               </CustomLink>
             </div>
-          </article>
+          </motion.article>
         </section>
         {/* CONTACT ME */}
       </main>

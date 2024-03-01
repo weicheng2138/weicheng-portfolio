@@ -54,7 +54,21 @@
           "src": "https://placehold.co/600x400"
         }
       ],
-      "contents": []
+      "contents": [
+        {
+          "isBulletPoint": false,
+          "title": "Project Introduction",
+          "content": "This portfolio website is build for my wife to enforce her UI/UX ability."
+        },
+        {
+          "isBulletPoint": true,
+          "title": "Project Run Down",
+          "bulletPoints": [
+            "Construct site with RWD design.",
+            "Follow the figma design from the designer."
+          ]
+        }
+      ]
     },
     {
       "id": "Electron-Vue-Desktop-App",

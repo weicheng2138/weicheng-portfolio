@@ -5,6 +5,8 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+
 import Home from '@/pages/home';
 import About from '@/pages/about';
 import Project from '@/pages/project';
@@ -38,7 +40,9 @@ function App() {
   return (
     <>
       <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-        <RouterProvider router={router} />
+        <HelmetProvider>
+          <RouterProvider router={router} />
+        </HelmetProvider>
       </ThemeProvider>
     </>
   );

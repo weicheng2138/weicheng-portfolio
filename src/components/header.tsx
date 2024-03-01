@@ -73,6 +73,7 @@ function Header({ handleDrawerClick, className }: Props) {
               >
                 <HiDownload className="h-[1.2rem] w-[1.2rem]" />
                 <Typography variant="button1">{t('nav.resume')}</Typography>
+                <span className="sr-only">Download resume</span>
               </CustomLink>
 
               <section className="flex h-full items-center gap-1">
