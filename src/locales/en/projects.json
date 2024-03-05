@@ -6,10 +6,16 @@
       "id": "GUM-Official-Website-and-Dashboard",
       "tags": ["Next.js", "Typescript", "Chart.js", "Swiper.js", "Material UI"],
       "title": "GUM Official Website and Dashboard",
+      "links": [
+        {
+          "id": "website",
+          "url": "https://www.gumhk.com/en-HK/mpf-plan-and-design"
+        }
+      ],
       "images": [
         {
           "id": 0,
-          "src": "https://placehold.co/600x400"
+          "src": "https://share.cleanshot.com/Lsm6vWlq/download"
         },
         {
           "id": 1,
@@ -24,13 +30,13 @@
         {
           "isBulletPoint": false,
           "title": "Project Introduction",
-          "content": "GUM is a project which is an outsource project from a company. The project is to build an official website and a dashboard for the company. The official website provides the introduction of the courses and the registration function. The dashboard provides the management of the courses and the query of the registration data."
+          "content": "GUM is a project which is an outsource project from a company. The project is to build an official website and a dashboard for the company in the middle of the development. The official website provides the introduction of the courses and the registration function. The dashboard provides the management of the courses and the query of the registration data."
         },
         {
           "isBulletPoint": true,
-          "title": "Project Run Down",
+          "title": "Things I did",
           "bulletPoints": [
-            "Construct site product pages with RWD design.",
+            "Construct product pages with RWD design.",
             "Construct common pages such as about us, contact us, and so on."
           ]
         }
@@ -40,10 +46,20 @@
       "id": "Portfolio-Website-for-a-UI-UX-Designer-V2",
       "tags": ["Next.js", "Tailwind"],
       "title": "Portfolio Website for a UI/UX Designer V2",
+      "links": [
+        {
+          "id": "github",
+          "url": "https://github.com/weicheng2138/portfolio-weitsao-v2"
+        },
+        {
+          "id": "website",
+          "url": "https://www.weitsao.com/"
+        }
+      ],
       "images": [
         {
           "id": 0,
-          "src": "https://placehold.co/600x500"
+          "src": "https://share.cleanshot.com/qtv3Dwsn/download"
         },
         {
           "id": 1,
@@ -62,7 +78,7 @@
         },
         {
           "isBulletPoint": true,
-          "title": "Project Run Down",
+          "title": "Things I did",
           "bulletPoints": [
             "Construct site with RWD design.",
             "Follow the figma design from the designer."
@@ -72,43 +88,36 @@
     },
     {
       "id": "Electron-Vue-Desktop-App",
-      "tags": ["Vue", "Electron"],
+      "tags": ["Vue", "Electron", "Vuetify"],
       "title": "Electron-Vue Desktop App",
+      "links": [
+        {
+          "id": "github",
+          "url": "https://github.com/weicheng2138/vue-electron"
+        }
+      ],
       "images": [
         {
           "id": 0,
           "src": "https://placehold.co/600x600"
-        },
-        {
-          "id": 1,
-          "src": "https://placehold.co/600x400"
-        },
-        {
-          "id": 3,
-          "src": "https://placehold.co/600x400"
         }
       ],
-      "contents": []
-    },
-    {
-      "id": "Customized-Dashboard-for-the-crawling-data-from-Taifex",
-      "tags": ["Vue", "Firebase", "Chart.js"],
-      "title": "Customized Dashboard for the crawling data from Taifex",
-      "images": [
+      "contents": [
         {
-          "id": 0,
-          "src": "https://placehold.co/600x600"
+          "isBulletPoint": false,
+          "title": "Project Introduction",
+          "content": "Create a desktop app to manage Windows windows status and crawl."
         },
         {
-          "id": 1,
-          "src": "https://placehold.co/600x400"
-        },
-        {
-          "id": 3,
-          "src": "https://placehold.co/600x400"
+          "isBulletPoint": true,
+          "title": "Things I did",
+          "bulletPoints": [
+            "Making sure that the specific window opens on Windows is always on top and make sure some of window should not be show up.",
+            "Line Notify API to send the message to the user when window is changed.",
+            "Crawl the data from the website and save it to specific excel file."
+          ]
         }
-      ],
-      "contents": []
+      ]
     }
   ]
 }

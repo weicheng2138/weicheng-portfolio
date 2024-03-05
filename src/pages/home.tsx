@@ -1,6 +1,5 @@
 import Typography from '@/components/typography';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 import { VscGithubInverted } from 'react-icons/vsc';
 import { RiLinkedinFill } from 'react-icons/ri';
 import { BiLogoGmail } from 'react-icons/bi';
@@ -30,7 +29,6 @@ type JobItem = {
 const Home = () => {
   console.log('Home rendered');
   const { t } = useTranslation('common');
-  const navigate = useNavigate();
 
   const jobs: JobItem[] = t('home.experience.jobs', { returnObjects: true });
 
@@ -56,7 +54,7 @@ const Home = () => {
             whileInView={{
               opacity: 1,
               x: 0,
-              transition: { duration: 1, type: 'spring' },
+              transition: { duration: 1, type: 'spring', delay: 0.3 },
             }}
             className={cn(
               'flex w-full max-w-5xl flex-col items-center justify-center px-14',

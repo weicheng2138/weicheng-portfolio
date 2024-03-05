@@ -77,12 +77,12 @@ const Project = () => {
             className="mb-10 w-full hover:cursor-grab active:cursor-grabbing md:mb-20"
           >
             <CarouselContent>
-              {Array.from({ length: 5 }).map((_, index) => (
-                <CarouselItem key={index}>
+              {project.images.map((image, index) => (
+                <CarouselItem key={image.id}>
                   <Card>
                     <CardImage className="h-[308px]">
                       <motion.img
-                        src="https://placehold.co/600x400"
+                        src={image.src}
                         className={cn('h-full w-full object-cover')}
                         whileHover={{
                           scale: 1.1,
@@ -120,7 +120,6 @@ const Project = () => {
                   ) : (
                     <Typography variant="p2">{content.content}</Typography>
                   )}
-                  {/* <Typography variant="p1">{content.}</Typography> */}
                 </div>
               );
             })}
