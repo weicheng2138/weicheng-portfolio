@@ -1,6 +1,6 @@
 # Weicheng's Portfolio V2
 
-<!-- ![Vercel](https://vercelbadge.vercel.app/api/weicheng2138/portfolio-weitsao-v2) -->
+![Vercel](https://vercelbadge.vercel.app/api/weicheng2138/weicheng-portfolio)
 
 A playful version of portfolio app. Almost care every detail of the site.
 
@@ -50,4 +50,4 @@ pnpm preview
 - Theme is based on shadcn and modify it to my [theme](https://ui.shadcn.com/themes).
 - `Typography` component is well handled.
 - We have `cn` function in `lib/utils.ts` to help us to merge className and clsx to do more flexible conditioning.
-- React `forwardRef`, `createPortal`
+- React `forwardRef`, `createPortal`, `ElementRef<'div'>`

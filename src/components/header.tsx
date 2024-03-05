@@ -68,7 +68,8 @@ function Header({ handleDrawerClick, className }: Props) {
                 <Typography variant="button1">{t('nav.projects')}</Typography>
               </NavLink>
               <CustomLink
-                href="http://www.google.com"
+                isFile
+                href="/weichenghung_cv_2023.pdf"
                 className="flex flex-row items-center gap-2 rounded-full border-2 border-gray05 px-4 py-2 transition-colors hover:bg-gray02 dark:border-gray02 hover:dark:bg-gray05"
               >
                 <HiDownload className="h-[1.2rem] w-[1.2rem]" />

@@ -37,7 +37,7 @@ const Projects = () => {
                 <CardImage>
                   <motion.img
                     src={project.images[0].src}
-                    className={cn('h-full w-full object-cover')}
+                    className={cn('h-full w-full object-cover object-top')}
                     whileHover={{
                       scale: 1.1,
                       transition: { type: 'tween' },
