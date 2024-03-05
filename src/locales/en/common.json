@@ -1,8 +1,71 @@
 {
-  "author": "Weicheng Hung",
+  "author": "WeiCheng Hung",
+  "author-reversed": "洪 瑋成",
   "nav": {
     "about": "About",
     "projects": "Projects",
     "resume": "Resume"
+  },
+  "home": {
+    "hero-content": " I'm a developer with an insatiable curiosity, dedicated to crafting outstanding frontend experiences. My coding journey blends a passion for technology with a commitment to problem-solving. I thrive on collaborating with teams to create captivating products. Here, I unite my technical skills and creativity to deliver a unique and impressive digital experience for you. Let's explore, innovate, and inspire together.",
+    "contact-title": "Contact Me",
+    "contact-content": "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at",
+    "experience": {
+      "title": "Experiences",
+      "jobs": [
+        {
+          "id": 0,
+          "title": "Frontend Developer",
+          "company": "President Information Corp.",
+          "period": "2021/10 - current",
+          "description": {
+            "brief": "In charge of developing frontend product and deal with some frontend issues.",
+            "details": [
+              "Develop EC platform frontend and dashboard",
+              "Implement Google Speech-to-Text API to do the search for ec platform",
+              "Maintain X-Store"
+            ]
+          }
+        },
+        {
+          "id": 1,
+          "title": "R&D Substitute",
+          "company": "National Taiwan University",
+          "period": "2017/08 - 2021/06",
+          "description": {
+            "brief": "Handle research projects and develop utils of software for lab.",
+            "details": [
+              "Handle research projects on the topic of 3D shoe painting",
+              "Develop lab inventory management system through RFID",
+              "Control Six-axis robot arm",
+              "Side Project: Taifex data crawling and electron-vue desktop app"
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "title": "Co-founder & Software Developer",
+          "company": "Anhe Three Dimensional Corp.",
+          "period": "2015/08 - 2017/07",
+          "description": {
+            "brief": "Develop software for 3D printing.",
+            "details": [
+              "Algorithm implementation through Java which is refer to Zhang (2015)",
+              "Design human interface for inkjet 3D printer with Vaadin and Three.js",
+              "Construct internal system with Angular 2, Spring Boot Rest API and using MySQL as data source."
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "project": {
+    "back-button": "Back to Projects",
+    "project-not-found": "Project not found",
+    "view-github": "View on Github",
+    "view-site": "View on Website"
+  },
+  "not-found": {
+    "content": "Oops! The page you are looking for has been removed or relocated."
   }
 }

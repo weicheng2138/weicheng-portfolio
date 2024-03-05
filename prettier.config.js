@@ -1,4 +1,5 @@
 export default {
-  tailwindFunctions: ['clsx', 'cva'],
-  plugins: ['prettier-plugin-tailwindcss'],
+  singleQuote: true,
+  tailwindFunctions: ["clsx", "cva"],
+  plugins: ["prettier-plugin-tailwindcss"],
 };

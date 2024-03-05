@@ -1,0 +1,125 @@
+{
+  "title": "專案內容",
+  "brief": "這些是我最近參與的一些專案。有些專案賺了錢，有些沒有。但是所有的專案都教會了我一些東西。",
+  "details": [
+    {
+      "id": "GUM-Official-Website-and-Dashboard",
+      "tags": ["Next.js", "Typescript", "Chart.js", "Swiper.js", "Material UI"],
+      "title": "GUM 官網與後台",
+      "links": [
+        {
+          "id": "website",
+          "url": "https://www.gumhk.com/en-HK/mpf-plan-and-design"
+        }
+      ],
+      "images": [
+        {
+          "id": 0,
+          "src": "https://share.cleanshot.com/Lsm6vWlq/download"
+        },
+        {
+          "id": 1,
+          "src": "https://placehold.co/600x400"
+        },
+        {
+          "id": 3,
+          "src": "https://placehold.co/600x400"
+        }
+      ],
+      "contents": [
+        {
+          "isBulletPoint": false,
+          "title": "專案介紹",
+          "content": "GUM 是一個外包專案，這個專案是為一家公司建立官方網站和後台。官方網站提供課程介紹和報名功能。後台提供課程管理和報名資料查詢。"
+        },
+        {
+          "isBulletPoint": true,
+          "title": "工作事項",
+          "bulletPoints": [
+            "建構產品頁面，並且設計響應式網頁。",
+            "建構共用頁面，例如關於我們、聯絡我們等等。",
+            "建構部分後台頁面，並介接後端 API。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Portfolio-Website-for-a-UI-UX-Designer-V2",
+      "tags": ["Next.js", "Tailwind"],
+      "title": "UI/UX 設計師個人作品集網站 V2",
+      "links": [
+        {
+          "id": "github",
+          "url": "https://github.com/weicheng2138/portfolio-weitsao-v2"
+        },
+        {
+          "id": "website",
+          "url": "https://www.weitsao.com/"
+        }
+      ],
+      "images": [
+        {
+          "id": 0,
+          "src": "https://share.cleanshot.com/qtv3Dwsn/download"
+        },
+        {
+          "id": 1,
+          "src": "https://placehold.co/600x400"
+        },
+        {
+          "id": 3,
+          "src": "https://placehold.co/600x400"
+        }
+      ],
+      "contents": [
+        {
+          "isBulletPoint": false,
+          "title": "專案介紹",
+          "content": "這個作品集網站是為了增強我太太的 UI/UX 能力與說服力而建立的。"
+        },
+        {
+          "isBulletPoint": true,
+          "title": "工作事項",
+          "bulletPoints": [
+            "從 Nuxt.js 轉換到 Next.js。",
+            "建構網站，並且使其響應。",
+            "遵照設計師 Figma 的設計。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Electron-Vue-Desktop-App",
+      "tags": ["Vue", "Electron", "Vuetify"],
+      "title": "桌面監控應用程式",
+      "links": [
+        {
+          "id": "github",
+          "url": "https://github.com/weicheng2138/vue-electron"
+        }
+      ],
+      "images": [
+        {
+          "id": 0,
+          "src": "https://placehold.co/600x600"
+        }
+      ],
+      "contents": [
+        {
+          "isBulletPoint": false,
+          "title": "專案介紹",
+          "content": "這是一個外包專案，主要在解決個人在視窗上與爬蟲的需求。"
+        },
+        {
+          "isBulletPoint": true,
+          "title": "工作事項",
+          "bulletPoints": [
+            "確保特定視窗在 Windows 上一直在最上層，並確保某些視窗不會顯示。",
+            "Line 通知 API 用於視窗變更時與爬蟲完成時向用戶發送消息。",
+            "爬取網站數據並保存到特定的 Excel 文件。"
+          ]
+        }
+      ]
+    }
+  ]
+}

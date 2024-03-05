@@ -5,11 +5,14 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* --foreground: 222.2 84% 4.9%; */
+    /* #4D4D4D */
+    --foreground: 0 0% 30%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
+    /* #3FB1E8 transform to hsl */
     --primary: 200 79% 58%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
@@ -28,12 +31,13 @@
 
   .dark {
     --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* #F4F4F4 */
+    --foreground: 0 0% 96%;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
+    --primary: 200 79% 58%;
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -54,6 +58,11 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-500 ease-in-out;
   }
+}
+
+html {
+  scroll-padding-top: 4.5rem;
+  scroll-behavior: smooth;
 }

@@ -1,8 +1,71 @@
 {
-  "author": "洪瑋成",
+  "author": "洪 瑋成",
+  "author-reversed": "WeiCheng Hung",
   "nav": {
     "about": "關於我",
     "projects": "專案內容",
     "resume": "履歷"
+  },
+  "home": {
+    "hero-content": "我是一名擁有旺盛好奇心的開發者，專注於打造出眾的前端體驗。我的編碼旅程結合了技術的熱情和解決問題的堅持。我熱愛與團隊攜手合作，努力打造引人入勝的產品。這裡，我將我的技術與創造力結合，為您帶來獨特而令人印象深刻的數位體驗。讓我們一同探索、創新，一同啟發。",
+    "contact-title": "與我聯絡",
+    "contact-content": "我正在尋找全職的工作機會，如果有任何問題可以跟我聯絡。",
+    "experience": {
+      "title": "工作經歷",
+      "jobs": [
+        {
+          "id": 0,
+          "title": "EC 前端系統設計師",
+          "company": "統一資訊股份有限公司",
+          "period": "2021/10 - 仍在職",
+          "description": {
+            "brief": "負責前端產品並處理公司前端相關議題。",
+            "details": [
+              "開發 EC 平台前端與後台",
+              "導入 Google 語音辨識 API 作為 EC 平台搜尋功能",
+              "維護 X-Store 後台"
+            ]
+          }
+        },
+        {
+          "id": 1,
+          "title": "研發替代役",
+          "company": "國立台灣大學",
+          "period": "2017/08 - 2021/06",
+          "description": {
+            "brief": "處理研究專案並開發實驗室相關軟體。",
+            "details": [
+              "處理 3D 鞋面繪製研究專案",
+              "開發 RFID 實驗室庫存管理系統",
+              "控制六軸機械手臂",
+              "接案: 台指期資料爬蟲與 electron-vue 桌面應用程式"
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "title": "共同創辦人 & 軟體開發者",
+          "company": "安和三維股份有限公司",
+          "period": "2015/08 - 2017/07",
+          "description": {
+            "brief": "開發 3D 列印相關軟體。",
+            "details": [
+              "使用 Java 實作 3D 列印切層演算法，參考 Zhang (2015)",
+              "使用 Vaadin 與 Three.js 設計 3D 列印人機介面",
+              "使用 Angular 2 與 Spring Boot 開發內部系統，處理訂單等資訊。"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "project": {
+    "back-button": "返回專案列表",
+    "project-not-found": "找不到該名稱的專案，請返回專案列表。",
+    "view-github": "查看 Github",
+    "view-site": "查看網站"
+  },
+  "not-found": {
+    "content": "抱歉，找不到您要的頁面！"
   }
 }
