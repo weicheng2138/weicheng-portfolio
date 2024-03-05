@@ -1,8 +1,15 @@
 import { Link } from 'react-router-dom';
 
-type AnchorProps = React.ComponentPropsWithoutRef<'a'>;
-const CustomLink = ({ href, children, ...rest }: AnchorProps) => {
-  const isInternalLink = href && href.startsWith('/');
+type AnchorProps = React.ComponentPropsWithoutRef<'a'> & {
+  isFile?: boolean;
+};
+const CustomLink = ({
+  href,
+  children,
+  isFile = false,
+  ...rest
+}: AnchorProps) => {
+  const isInternalLink = href && href.startsWith('/') && !isFile;
   const isAnchorLink = href && href.startsWith('#');
 
   if (isInternalLink)
