@@ -80,6 +80,7 @@
           "isBulletPoint": true,
           "title": "Things I did",
           "bulletPoints": [
+            "From Nuxt.js to Next.js.",
             "Construct site with RWD design.",
             "Follow the figma design from the designer."
           ]
@@ -106,7 +107,7 @@
         {
           "isBulletPoint": false,
           "title": "Project Introduction",
-          "content": "Create a desktop app to manage Windows windows status and crawl."
+          "content": "Create a desktop app to manage Windows windows status and crawl data."
         },
         {
           "isBulletPoint": true,

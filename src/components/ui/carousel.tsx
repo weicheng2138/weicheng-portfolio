@@ -2,7 +2,6 @@ import * as React from 'react';
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from 'embla-carousel-react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { RxDotFilled } from 'react-icons/rx';
 
 import { cn } from '@/lib/utils';
@@ -174,7 +173,7 @@ Carousel.displayName = 'Carousel';
 
 const CarouselContent = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  React.HTMLAttributes<React.ElementRef<'div'>>
 >(({ className, ...props }, ref) => {
   const { carouselRef, orientation } = useCarousel();
 

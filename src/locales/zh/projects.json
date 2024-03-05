@@ -81,8 +81,9 @@
           "isBulletPoint": true,
           "title": "工作事項",
           "bulletPoints": [
+            "從 Nuxt.js 轉換到 Next.js。",
             "建構網站，並且使其響應。",
-            "遵照設計師 Figma 的設計"
+            "遵照設計師 Figma 的設計。"
           ]
         }
       ]

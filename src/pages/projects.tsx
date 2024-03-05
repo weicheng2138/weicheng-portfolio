@@ -12,7 +12,6 @@ const Projects = () => {
   const projects: ProjectItem[] = t('details', {
     returnObjects: true,
   });
-  console.log(projects);
 
   return (
     <>
