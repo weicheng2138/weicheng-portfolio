@@ -13,6 +13,10 @@ type StringContent = {
 declare type ProjectItem = {
   id: string;
   title: string;
+  links: {
+    id: string;
+    url: string;
+  }[];
   tags: string[];
   images: {
     id: number;

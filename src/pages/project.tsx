@@ -17,6 +17,7 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Helmet } from 'react-helmet-async';
+import CustomLink from '@/components/custom-link';
 
 type ProjectParams = {
   title: string;
@@ -121,6 +122,32 @@ const Project = () => {
                     <Typography variant="p2">{content.content}</Typography>
                   )}
                 </div>
+              );
+            })}
+          </section>
+
+          <section className="mb-4 flex flex-col items-center gap-2 py-12">
+            <Link to="/projects">
+              <Button variant="ghost" className="mb-8">
+                <FaChevronLeft />
+                <Typography variant="button1" className="ml-2">
+                  {t('project.back-button')}
+                </Typography>
+              </Button>
+            </Link>
+            {project.links.map((link) => {
+              return (
+                <CustomLink
+                  key={link.id}
+                  href={link.url}
+                  className="w-full max-w-96"
+                >
+                  <Button variant="border">
+                    {link.id === 'github'
+                      ? t('project.view-github')
+                      : t('project.view-site')}
+                  </Button>
+                </CustomLink>
               );
             })}
           </section>

@@ -61,7 +61,9 @@
   },
   "project": {
     "back-button": "Back to Projects",
-    "project-not-found": "Project not found"
+    "project-not-found": "Project not found",
+    "view-github": "View on Github",
+    "view-site": "View on Website"
   },
   "not-found": {
     "content": "Oops! The page you are looking for has been removed or relocated."
