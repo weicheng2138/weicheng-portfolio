@@ -291,7 +291,6 @@ const CarouselDotNavigation = React.forwardRef<
             size={size}
             className={cn(
               'h-6 w-6 gap-1 rounded-full border-0 md:gap-2',
-              '-bottom-12 left-1/2 -translate-x-1/2',
               'transition-all duration-300 ease-in-out hover:scale-125 md:hover:scale-150',
               className,
             )}
