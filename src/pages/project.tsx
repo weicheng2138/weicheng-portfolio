@@ -23,7 +23,7 @@ type ProjectParams = {
   title: string;
 };
 const Project = () => {
-  console.log('Rendering Project');
+  // console.log('Rendering Project');
   const { t } = useTranslation('common');
   const { t: tProjects } = useTranslation('projects');
   const { title } = useParams<ProjectParams>();
