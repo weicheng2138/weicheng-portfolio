@@ -22,7 +22,7 @@ const Projects = () => {
       </Helmet>
 
       {/* HERO */}
-      <header className="flex h-screen w-full max-w-5xl flex-col items-start justify-center gap-8 p-8 md:p-14">
+      <header className="flex h-svh w-full max-w-5xl flex-col items-start justify-center gap-8 p-8 md:p-14">
         <Typography variant="h1">{t('title')}</Typography>
         <Typography variant="p1">{t('brief')}</Typography>
       </header>

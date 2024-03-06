@@ -32,20 +32,6 @@ const Home = () => {
   const { t } = useTranslation('common');
   const jobs: JobItem[] = t('home.experience.jobs', { returnObjects: true });
 
-  // Check if user is at the top of the page
-  const [isTop, setIsTop] = useState(true);
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsTop(false);
-      } else {
-        setIsTop(true);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isTop]);
-
   return (
     <>
       <Helmet>
@@ -54,12 +40,7 @@ const Home = () => {
         <link rel="canonical" href="https://weicheng.dev" />
       </Helmet>
 
-      <header
-        className={cn(
-          'flex items-center justify-center',
-          isTop ? 'h-dvh' : 'h-screen',
-        )}
-      >
+      <header className={cn('flex h-svh items-center justify-center')}>
         <TextRoller />
       </header>
       <main className="flex w-full flex-col items-center overflow-x-hidden">
