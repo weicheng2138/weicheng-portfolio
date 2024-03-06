@@ -40,7 +40,7 @@ const Home = () => {
         <link rel="canonical" href="https://weicheng.dev" />
       </Helmet>
 
-      <header className="flex h-dvh items-center justify-center">
+      <header className="flex h-screen items-center justify-center">
         <TextRoller />
       </header>
       <main className="flex w-full flex-col items-center overflow-x-hidden">
