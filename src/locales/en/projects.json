@@ -37,7 +37,8 @@
           "title": "Things I did",
           "bulletPoints": [
             "Construct product pages with RWD design.",
-            "Construct common pages such as about us, contact us, and so on."
+            "Construct common pages such as about us, contact us, and so on.",
+            "Construct partial functions of the dashboard."
           ]
         }
       ]
