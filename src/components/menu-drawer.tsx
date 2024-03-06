@@ -4,7 +4,7 @@ import { ModeToggle } from '@/components/mode-toggle';
 import { I18nToggle } from '@/components/i18n-toggle';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { HiX } from 'react-icons/hi';
+import { HiDownload, HiX } from 'react-icons/hi';
 import { VscGithubInverted } from 'react-icons/vsc';
 import { RiLinkedinFill } from 'react-icons/ri';
 
@@ -14,6 +14,7 @@ import { createPortal } from 'react-dom';
 import CustomLink from './custom-link';
 import Typography from './typography';
 import { BiLogoGmail } from 'react-icons/bi';
+import config from '@/config.json';
 
 const createDrawerPortal = () => {
   const drawer = document.createElement('div');
@@ -110,7 +111,7 @@ const MenuDrawer = ({ show, handleClose }: Props) => {
               <CustomLink href="/#hero-about" className="w-full">
                 <Button
                   variant="social"
-                  className="flex h-auto gap-2 py-4"
+                  className="flex h-auto gap-2 py-4 hover:bg-transparent hover:text-primary dark:hover:text-primary"
                   onClick={() => handleClose()}
                 >
                   <Typography variant="button1">{t('nav.about')}</Typography>
@@ -119,21 +120,22 @@ const MenuDrawer = ({ show, handleClose }: Props) => {
               <CustomLink href="/projects" className="w-full">
                 <Button
                   variant="social"
-                  className="flex h-auto gap-2 py-4"
+                  className="flex h-auto gap-2 py-4 hover:bg-transparent hover:text-primary dark:hover:text-primary"
                   onClick={() => handleClose()}
                 >
                   <Typography variant="button1">{t('nav.projects')}</Typography>
                 </Button>
               </CustomLink>
 
-              <CustomLink href="http://www.google.com" className="w-full">
-                <Button
-                  variant="social"
-                  className="flex h-auto gap-2 py-4"
-                  onClick={() => handleClose()}
-                >
-                  <Typography variant="button1">{t('nav.resume')}</Typography>
-                </Button>
+              <CustomLink
+                isFile
+                href={`/${config.resume}`}
+                className="mt-2 flex flex-row items-center gap-2 rounded-full border-2 border-gray05 px-4 py-2 transition-colors hover:bg-gray02 dark:border-gray02 hover:dark:bg-gray05"
+                onClick={() => handleClose()}
+              >
+                <HiDownload className="h-[1.2rem] w-[1.2rem]" />
+                <Typography variant="button1">{t('nav.resume')}</Typography>
+                <span className="sr-only">Download resume</span>
               </CustomLink>
             </div>
 
