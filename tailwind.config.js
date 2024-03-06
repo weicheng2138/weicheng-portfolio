@@ -95,7 +95,7 @@ module.exports = {
       },
       backgroundImage: {
         'radial-light': 'radial-gradient(transparent 1px, white 1px)',
-        'radial-dark': 'radial-gradient(transparent 1px, black 1px)',
+        'radial-dark': 'radial-gradient(transparent 1px, #020817 1px)',
       },
     },
   },

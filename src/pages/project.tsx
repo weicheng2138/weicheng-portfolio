@@ -23,7 +23,7 @@ type ProjectParams = {
   title: string;
 };
 const Project = () => {
-  console.log('Rendering Project');
+  // console.log('Rendering Project');
   const { t } = useTranslation('common');
   const { t: tProjects } = useTranslation('projects');
   const { title } = useParams<ProjectParams>();
@@ -45,7 +45,7 @@ const Project = () => {
         <link rel="canonical" href="https://weicheng.dev/projects" />
       </Helmet>
       <Link to="/projects">
-        <Button variant="ghost" className="mb-8">
+        <Button variant="ghost" className="mb-8 mt-4">
           <FaChevronLeft />
           <Typography variant="button1" className="ml-2">
             {t('project.back-button')}
