@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from 'react';
 import CustomLink from './custom-link';
 import Typography from './typography';
 import useScrollToAnchor from '@/hooks/useScrollToAnchor';
+import config from '@/config.json';
 
 type Props = {
   className?: string;
@@ -69,7 +70,7 @@ function Header({ handleDrawerClick, className }: Props) {
               </NavLink>
               <CustomLink
                 isFile
-                href="/weichenghung_cv_2023.pdf"
+                href={`/${config.resume}`}
                 className="flex flex-row items-center gap-2 rounded-full border-2 border-gray05 px-4 py-2 transition-colors hover:bg-gray02 dark:border-gray02 hover:dark:bg-gray05"
               >
                 <HiDownload className="h-[1.2rem] w-[1.2rem]" />
