@@ -51,6 +51,7 @@ const Home = () => {
         >
           <motion.article
             initial={{ opacity: 0, x: 100 }}
+            viewport={{ once: true }}
             whileInView={{
               opacity: 1,
               x: 0,
@@ -90,6 +91,7 @@ const Home = () => {
         <section className="flex w-full justify-center py-[7.5rem]">
           <motion.article
             initial={{ opacity: 0, x: -100 }}
+            viewport={{ once: true }}
             whileInView={{
               opacity: 1,
               x: 0,
@@ -158,6 +160,7 @@ const Home = () => {
         <section className="flex w-full justify-center bg-gray02 pb-[3.5rem] pt-40 dark:bg-gray05">
           <motion.article
             initial={{ opacity: 0, x: 100 }}
+            viewport={{ once: true }}
             whileInView={{
               opacity: 1,
               x: 0,
