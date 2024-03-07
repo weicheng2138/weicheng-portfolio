@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import CustomImage from '@/components/custom-image';
 
 const Projects = () => {
   const { t } = useTranslation('projects');
@@ -35,14 +36,7 @@ const Projects = () => {
             <Link key={project.id} to={`/projects/${project.id}`}>
               <Card>
                 <CardImage>
-                  <motion.img
-                    src={project.images[0].src}
-                    className={cn('h-full w-full object-cover object-top')}
-                    whileHover={{
-                      scale: 1.1,
-                      transition: { type: 'tween' },
-                    }}
-                  />
+                  <CustomImage src={project.images[0].src} />
                 </CardImage>
                 <div className="flex items-center justify-between">
                   <section className="flex flex-col gap-2">
