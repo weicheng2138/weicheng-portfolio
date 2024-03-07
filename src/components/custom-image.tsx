@@ -15,7 +15,7 @@ const CustomImage = ({ src }: ImageProps) => {
       <motion.img
         src="/image_fallback.png"
         className={cn(
-          'h-full w-full object-cover object-top opacity-50',
+          'h-full w-full object-cover opacity-50',
           isLoading ? 'block' : 'hidden',
         )}
         whileHover={{
