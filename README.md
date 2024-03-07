@@ -51,3 +51,4 @@ pnpm preview
 - `Typography` component is well handled.
 - We have `cn` function in `lib/utils.ts` to help us to merge className and clsx to do more flexible conditioning.
 - React `forwardRef`, `createPortal`, `ElementRef<'div'>`
+- Tailwind class of `h-dvh`, `h-svh`
