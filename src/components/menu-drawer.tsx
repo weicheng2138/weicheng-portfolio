@@ -74,7 +74,7 @@ const MenuDrawer = ({ show, handleClose }: Props) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.4, delay: 0.5 }}
+            transition={{ duration: 0.2, delay: 0.1 }}
             className={cn('fixed inset-0 z-40 backdrop-blur-sm')}
             onClick={() => handleClose()}
           />
@@ -82,7 +82,7 @@ const MenuDrawer = ({ show, handleClose }: Props) => {
             initial={{ x: 250 }}
             animate={{
               x: 5,
-              transition: { duration: 0.4, delay: 0.5, type: 'spring' },
+              transition: { duration: 0.4, delay: 0.1, type: 'spring' },
             }}
             exit={{ x: 250, transition: { duration: 0.4 } }}
             className={cn(

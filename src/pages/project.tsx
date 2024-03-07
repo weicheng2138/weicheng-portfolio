@@ -13,11 +13,10 @@ import {
   CarouselDotNavigation,
 } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
-import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Helmet } from 'react-helmet-async';
 import CustomLink from '@/components/custom-link';
+import CustomImage from '@/components/custom-image';
 
 type ProjectParams = {
   title: string;
@@ -32,7 +31,7 @@ const Project = () => {
   });
   const project = projects.find((project) => project.id === title);
 
-  const [api, setApi] = useState<CarouselApi>();
+  const [_api, setApi] = useState<CarouselApi>();
   const carouselPlugin = useRef(
     Autoplay({ delay: 2000, stopOnInteraction: false, stopOnMouseEnter: true }),
   );
@@ -78,18 +77,11 @@ const Project = () => {
             className="mb-10 w-full hover:cursor-grab active:cursor-grabbing md:mb-20"
           >
             <CarouselContent>
-              {project.images.map((image, index) => (
+              {project.images.map((image) => (
                 <CarouselItem key={image.id}>
                   <Card>
                     <CardImage className="h-[308px]">
-                      <motion.img
-                        src={image.src}
-                        className={cn('h-full w-full object-cover object-top')}
-                        whileHover={{
-                          scale: 1.1,
-                          transition: { type: 'tween' },
-                        }}
-                      />
+                      <CustomImage src={image.src} />
                     </CardImage>
                   </Card>
                 </CarouselItem>

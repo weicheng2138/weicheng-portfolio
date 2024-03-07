@@ -86,6 +86,7 @@ function Header({ handleDrawerClick, className }: Props) {
             </>
           ) : (
             <Button
+              className="hover:bg-transparent"
               variant="ghost"
               size="icon"
               onClick={() => handleDrawerClick()}

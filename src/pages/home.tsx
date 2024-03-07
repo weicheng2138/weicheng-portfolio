@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/accordion';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 type JobItem = {
   id: number;
@@ -27,9 +28,8 @@ type JobItem = {
   };
 };
 const Home = () => {
-  // console.log('Home rendered');
+  console.log('Home rendered');
   const { t } = useTranslation('common');
-
   const jobs: JobItem[] = t('home.experience.jobs', { returnObjects: true });
 
   return (
@@ -40,7 +40,7 @@ const Home = () => {
         <link rel="canonical" href="https://weicheng.dev" />
       </Helmet>
 
-      <header className="flex h-screen items-center justify-center">
+      <header className={cn('flex h-svh items-center justify-center')}>
         <TextRoller />
       </header>
       <main className="flex w-full flex-col items-center overflow-x-hidden">
