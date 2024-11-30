@@ -4,6 +4,8 @@
 
 A playful version of portfolio app. Almost care every detail of the site.
 
+![demo](https://share.cleanshot.com/3MCRzNHF/download)
+
 ## 🎨 Color Reference
 
 | Color     | Hex                                                                | Color  | Hex                                                                |
@@ -22,7 +24,7 @@ A playful version of portfolio app. Almost care every detail of the site.
 - [x] 👾 [Framer Motion](https://www.framer.com/motion/)
 - [x] ⚛️ [Embla Carousel](https://www.embla-carousel.com/)
 - [x] 🌏 [i18n Next](https://react.i18next.com/)
-- [x] 🪖 [React Helmet](https://github.com/nfl/react-helmet)
+- [x] 🪖 [React Helmet Async](https://github.com/staylor/react-helmet-async#readme)
 - [x] ✨ Eslint & prettier
 - [x] ✏️ cz (with commitizen installed globally)
 

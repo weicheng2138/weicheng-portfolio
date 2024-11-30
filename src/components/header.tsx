@@ -40,7 +40,7 @@ function Header({ handleDrawerClick, className }: Props) {
   return (
     <header
       className={cn(
-        'fixed top-0 flex h-[4.5rem] w-full justify-center transition',
+        'fixed left-0 right-0 top-0 flex h-[4.5rem] w-full justify-center transition',
         className,
         !isTop && 'border-b border-zinc-200 dark:border-zinc-800',
         'bg-radial-light backdrop-blur-sm backdrop-saturate-50 [background-size:4px_4px] dark:bg-radial-dark',
