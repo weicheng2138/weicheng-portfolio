@@ -15,20 +15,29 @@
       "jobs": [
         {
           "id": 0,
-          "title": "Frontend Developer",
-          "company": "President Information Corp.",
-          "period": "2021/10 - current",
+          "title": "Web Developer",
+          "company": "Cathay Life Insurance Co., Ltd.",
+          "period": "2025/02 - current",
           "description": {
-            "brief": "In charge of developing frontend product and deal with some frontend issues.",
-            "details": [
-              "Develop EC platform frontend and dashboard",
-              "Implement Google Speech-to-Text API to do the search for ec platform",
-              "Maintain X-Store"
-            ]
+            "brief": "Lead the frontend design and development of the second-generation actuarial system, focusing on modern UI/UX principles, performance optimization, and seamless integration with backend services to enhance user experience and operational efficiency.",
+            "details": []
           }
         },
         {
           "id": 1,
+          "title": "Frontend Developer",
+          "company": "President Information Corp.",
+          "period": "2021/10 - 2025/02",
+          "description": {
+            "brief": "In charge of developing frontend development of Lumine AI",
+            "details": [
+              "Lumine AI frontend lead for developing the AI chatbot platform",
+              "IOpenMall chatbot development"
+            ]
+          }
+        },
+        {
+          "id": 2,
           "title": "R&D Substitute",
           "company": "National Taiwan University",
           "period": "2017/08 - 2021/06",
@@ -43,7 +52,7 @@
           }
         },
         {
-          "id": 2,
+          "id": 3,
           "title": "Co-founder & Software Developer",
           "company": "Anhe Three Dimensional Corp.",
           "period": "2015/08 - 2017/07",
