@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/accordion';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import config from '@/config.json';
 
 type JobItem = {
   id: number;
@@ -30,7 +30,7 @@ type JobItem = {
 const Home = () => {
   console.log('Home rendered');
   const { t } = useTranslation('common');
-  const jobs: JobItem[] = t('home.experience.jobs', { returnObjects: true });
+  const jobs = t('home.experience.jobs', { returnObjects: true }) as JobItem[];
 
   return (
     <>
@@ -78,7 +78,11 @@ const Home = () => {
                 <CustomLink href="/projects" className="w-full">
                   <Button variant="projects">{t('nav.projects')}</Button>
                 </CustomLink>
-                <CustomLink href="/resume" className="w-full">
+                <CustomLink
+                  isFile
+                  href={`/${config.resume}`}
+                  className="w-full"
+                >
                   <Button variant="border">{t('nav.resume')}</Button>
                 </CustomLink>
               </div>
