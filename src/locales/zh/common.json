@@ -15,52 +15,62 @@
       "jobs": [
         {
           "id": 0,
-          "title": "網頁開發工程師",
+          "title": "網頁應用開發工程師",
           "company": "國泰人壽保險股份有限公司",
           "period": "2025/02 - 在職",
           "description": {
-            "brief": "負責第二代精算系統的前端設計與開發，專注於現代化的 UI/UX 原則、性能優化以及與後端服務的無縫整合，以提升用戶體驗和運營效率。",
+            "brief": "主導第二代精算系統的前端架構設計與開發，專注於現代 UI/UX 原則、效能優化，以及與後端服務的無縫整合，技術債採 React.js, typescript, shadcn，考量會需要處理多欄位渲染效能問題，已於架構設計納入多選下拉選單與表單欄位的虛擬化處理。",
             "details": []
           }
         },
         {
           "id": 1,
-          "title": "EC 前端系統設計師",
+          "title": "前端系統設計師",
           "company": "統一資訊股份有限公司",
           "period": "2021/10 - 2025/02",
           "description": {
             "brief": "統籌 Lumine AI 前端開發",
             "details": [
-              "領導前端團隊開發 Lumine AI",
-              "IOpenMall 聊天客服機器人開發"
+              "擔任 AI 團隊的前端主導，負責後台和聊天介面開發。初期協助專案理解，當時介面因政策因素委外開發。但最後交付的程式碼，特別是後台部分，其使用 Vue2 與 javascript，這部分不算問題，但他做了三次封裝，css important 地獄，毀滅性的開發體驗。為了解決這個問題，我提出並帶領 UX/UI 設計師在一個月內完成了完整的重寫，採 Vue3, typescript 與 element-plus，解決了套件生命週期結束 (EOL) 的問題與開發體驗問題，並最後成功上線。",
+              "開發 IOPENMall 客服聊天機器人，該專案也因人力關係，需要我介入後端開發，考量底下前端工程師熟悉 React.js，最後開發採 React.js, typescript, socket.io 完成其前後端架構與初期開發，最後交接給前端工程師與 PM，並成功上線。"
             ]
           }
         },
         {
           "id": 2,
+          "title": "兼職前端工程師",
+          "company": "港商駿隆科技平台股份有限公司",
+          "period": "2023/05 - 2023/09",
+          "description": {
+            "brief": "開發前端官網與後台",
+            "details": [
+              "全遠端開發其官方網站 https://www.gumhk.com/zh-HK (Next.js, typescript, MUI), APP 後台 (Next.js, typescript, MUI)。"
+            ]
+          }
+        },
+        {
+          "id": 3,
           "title": "研發替代役",
           "company": "國立台灣大學",
           "period": "2017/08 - 2021/06",
           "description": {
             "brief": "處理研究專案並開發實驗室相關軟體。",
             "details": [
-              "處理 3D 鞋面繪製研究專案",
-              "開發 RFID 實驗室庫存管理系統",
-              "控制六軸機械手臂"
+              "即時庫存系統開發：使用 RFID 標籤實作，技術債包括 Vue2、Vuetify.js 和 Firebase。",
+              "高精度六軸機械手臂控制：協助實驗室進行噴塗及其他實驗。"
             ]
           }
         },
         {
-          "id": 3,
-          "title": "共同創辦人 & 軟體開發者",
+          "id": 4,
+          "title": "共同創辦人",
           "company": "安和三維股份有限公司",
           "period": "2015/08 - 2017/07",
           "description": {
             "brief": "開發 3D 列印相關軟體。",
             "details": [
-              "使用 Java 實作 3D 列印切層演算法，參考 Zhang (2015)",
-              "使用 Vaadin 與 Three.js 設計 3D 列印人機介面",
-              "使用 Angular 2 與 Spring Boot 開發內部系統，處理訂單等資訊。"
+              "使用 Java 實作演算法，參考了 Zhang (2015) 的研究 Zhang (2015)。",
+              "使用 Vaadin 和 Three.js 設計噴墨 3D 列印機的人機介面。首次接觸介面開發。"
             ]
           }
         }
