@@ -28,8 +28,7 @@ type JobItem = {
   };
 };
 const Home = () => {
-  console.log('Home rendered');
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
   const jobs = t('home.experience.jobs', { returnObjects: true }) as JobItem[];
 
   return (
@@ -80,7 +79,7 @@ const Home = () => {
                 </CustomLink>
                 <CustomLink
                   isFile
-                  href={`/${config.resume}`}
+                  href={`/${i18n.language === 'en' ? config.resumeEn : config.resumeZh}`}
                   className="w-full"
                 >
                   <Button variant="border">{t('nav.resume')}</Button>

@@ -31,13 +31,25 @@
           "description": {
             "brief": "In charge of developing frontend development of Lumine AI",
             "details": [
-              "Lumine AI frontend lead for developing the AI chatbot platform",
-              "IOpenMall chatbot development"
+              "As a Frontend Lead of the AI Team, I am responsible for the backend and chat interface development. Initially assisted in project understanding while the interface was outsourced due to political factors. Provided examples and stacks for the chat interface, but the delivered code, particularly for the backend, was nearly unusable. To address this, I proposed and led a complete rewrite alongside the UX/UI designer within one month, resolving package EOL issues and ensuring successful deployment.",
+              "Developed the IOPENMall customer service chatbot. Due to manpower considerations for this project, I was required to step in for backend development. Given that the frontend engineers were proficient in React.js, the project's frontend and backend architecture, along with initial development, were completed using React.js, Typescript, and Socket.io. The project was successfully handed over to the frontend engineers and the Project Manager (PM), and subsequently launched."
             ]
           }
         },
         {
           "id": 2,
+          "title": "Part-time Frontend Engineer",
+          "company": "Gain Miles Technology Platform Limited",
+          "period": "2023/05 - 2023/09",
+          "description": {
+            "brief": "Develop official website and APP backend website",
+            "details": [
+              "Fully remote, build Official web site https://www.gumhk.com/zh-HK (Next.js, Typescript, MUI), mobile app backend dashboard (Next.js, Typescript, MUI) with full-stack developer."
+            ]
+          }
+        },
+        {
+          "id": 3,
           "title": "R&D Substitute",
           "company": "National Taiwan University",
           "period": "2017/08 - 2021/06",
@@ -46,13 +58,12 @@
             "details": [
               "Handle research projects on the topic of 3D shoe painting",
               "Develop lab inventory management system through RFID",
-              "Control Six-axis robot arm",
-              "Side Project: Taifex data crawling and electron-vue desktop app"
+              "Control Six-axis robot arm"
             ]
           }
         },
         {
-          "id": 3,
+          "id": 4,
           "title": "Co-founder & Software Developer",
           "company": "Anhe Three Dimensional Corp.",
           "period": "2015/08 - 2017/07",

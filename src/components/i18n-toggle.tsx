@@ -19,7 +19,7 @@ export function I18nToggle() {
           },
         )}
       >
-        中
+        EN
       </div>
       <div
         className={cn(
@@ -29,7 +29,7 @@ export function I18nToggle() {
           },
         )}
       >
-        EN
+        中
       </div>
       <span className="sr-only">Toggle language</span>
     </Toggle>
