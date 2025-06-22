@@ -3,6 +3,64 @@
   "brief": "這些是我最近參與的一些專案。有些專案賺了錢，有些沒有。但是所有的專案都教會了我一些東西。",
   "details": [
     {
+      "id": "Lumine-AI",
+      "tags": ["Vue.js", "Typescript", "ElementPlus", "React.js"],
+      "title": "Lumins AI",
+      "links": [],
+      "images": [
+        {
+          "id": 0,
+          "src": "https://share.cleanshot.com/8V7GxkJ4/download"
+        }
+      ],
+      "contents": [
+        {
+          "isBulletPoint": false,
+          "title": "專案介紹",
+          "content": "一個專為優化特定企業流程而設計的 AI 聊天機器人解決方案。"
+        },
+        {
+          "isBulletPoint": true,
+          "title": "負責項目",
+          "bulletPoints": [
+            "擔任 AI 團隊的前端主導，負責後台和聊天介面開發。初期協助專案理解，當時介面因政策因素委外開發。但最後交付的程式碼，特別是後台部分，其使用 Vue2 與 javascript，這部分不算問題，但他做了三次封裝，css important 地獄，毀滅性的開發體驗。為了解決這個問題，我提出並帶領 UX/UI 設計師在一個月內完成了完整的重寫，採 Vue3, typescript 與 element-plus，解決了套件生命週期結束 (EOL) 的問題與開發體驗問題，並最後成功上線。",
+            "協助並支援另一位前端工程師進行聊天機器人開發。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "IOPENMall-Chatbot",
+      "tags": ["React.js", "Typescript", "Shadcn", "socket.io", "Express.js"],
+      "title": "IOPENMall 客服聊天機器人",
+      "links": [],
+      "images": [
+        {
+          "id": 0,
+          "src": "https://share.cleanshot.com/3CjHh42p/download"
+        },
+        {
+          "id": 1,
+          "src": "https://share.cleanshot.com/LC028twW/download"
+        }
+      ],
+      "contents": [
+        {
+          "isBulletPoint": false,
+          "title": "專案介紹",
+          "content": "廠商支援聊天機器人，用於解決使用問題"
+        },
+        {
+          "isBulletPoint": true,
+          "title": "負責項目",
+          "bulletPoints": [
+            "使用 Node.js 開發後端 Socket 伺服器",
+            "開發前端聊天機器人介面，確保其操作流暢性"
+          ]
+        }
+      ]
+    },
+    {
       "id": "GUM-Official-Website-and-Dashboard",
       "tags": ["Next.js", "Typescript", "Chart.js", "Swiper.js", "Material UI"],
       "title": "GUM 官網與後台",

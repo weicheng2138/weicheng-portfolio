@@ -3,6 +3,64 @@
   "brief": "These are some of the projects I've worked on recently. Some of it did earn me some money, some of it didn't. But all of them taught me something.",
   "details": [
     {
+      "id": "Lumine-AI",
+      "tags": ["Vue.js", "Typescript", "ElementPlus", "React.js"],
+      "title": "Lumins AI",
+      "links": [],
+      "images": [
+        {
+          "id": 0,
+          "src": "https://share.cleanshot.com/8V7GxkJ4/download"
+        }
+      ],
+      "contents": [
+        {
+          "isBulletPoint": false,
+          "title": "Project Introduction",
+          "content": "An AI-powered chatbot solution designed to streamline specific business processes."
+        },
+        {
+          "isBulletPoint": true,
+          "title": "Things I did",
+          "bulletPoints": [
+            "As a Frontend Lead of the AI Team, I am responsible for the backend and chat interface development. Initially assisted in project understanding while the interface was outsourced due to political factors. Provided examples and stacks for the chat interface, but the delivered code, particularly for the backend, was nearly unusable. To address this, I proposed and led a complete rewrite alongside the UX/UI designer within one month, resolving package EOL issues and ensuring successful deployment.",
+            "Help and support another frontend engineer with its chatbot developing."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "IOPENMall-Chatbot",
+      "tags": ["React.js", "Typescript", "Shadcn", "socket.io", "Express.js"],
+      "title": "IOPENMall Vendor Support Chatbot",
+      "links": [],
+      "images": [
+        {
+          "id": 0,
+          "src": "https://share.cleanshot.com/3CjHh42p/download"
+        },
+        {
+          "id": 1,
+          "src": "https://share.cleanshot.com/LC028twW/download"
+        }
+      ],
+      "contents": [
+        {
+          "isBulletPoint": false,
+          "title": "Project Introduction",
+          "content": "Vendor Support Chatbot for Usage Problem Resolution"
+        },
+        {
+          "isBulletPoint": true,
+          "title": "Things I did",
+          "bulletPoints": [
+            "Develop its backend socket server with Node.js",
+            "Developed the frontend with a seamless chatbot interface"
+          ]
+        }
+      ]
+    },
+    {
       "id": "GUM-Official-Website-and-Dashboard",
       "tags": ["Next.js", "Typescript", "Chart.js", "Swiper.js", "Material UI"],
       "title": "GUM Official Website and Dashboard",
