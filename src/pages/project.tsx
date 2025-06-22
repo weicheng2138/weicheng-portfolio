@@ -26,9 +26,9 @@ const Project = () => {
   const { t } = useTranslation('common');
   const { t: tProjects } = useTranslation('projects');
   const { title } = useParams<ProjectParams>();
-  const projects: ProjectItem[] = tProjects('details', {
+  const projects = tProjects('details', {
     returnObjects: true,
-  });
+  }) as ProjectItem[];
   const project = projects.find((project) => project.id === title);
 
   const [_api, setApi] = useState<CarouselApi>();

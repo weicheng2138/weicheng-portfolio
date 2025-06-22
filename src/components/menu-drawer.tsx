@@ -27,7 +27,7 @@ type Props = {
   handleClose: () => void;
 };
 const MenuDrawer = ({ show, handleClose }: Props) => {
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
   const bodyRef = useRef(document.querySelector('body'));
   const drawerPortalRef = useRef(
     document.getElementById('drawer-root') || createDrawerPortal(),
@@ -129,7 +129,7 @@ const MenuDrawer = ({ show, handleClose }: Props) => {
 
               <CustomLink
                 isFile
-                href={`/${config.resume}`}
+                href={`/${i18n.language === 'en' ? config.resumeEn : config.resumeZh}`}
                 className="mt-2 flex flex-row items-center gap-2 rounded-full border-2 border-gray05 px-4 py-2 transition-colors hover:bg-gray02 dark:border-gray02 hover:dark:bg-gray05"
                 onClick={() => handleClose()}
               >
