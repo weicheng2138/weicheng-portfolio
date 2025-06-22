@@ -17,7 +17,7 @@ type Props = {
   handleDrawerClick: () => void;
 };
 function Header({ handleDrawerClick, className }: Props) {
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
   const breakpoint = useBreakpoint();
 
   // Detect scroll position
@@ -70,7 +70,7 @@ function Header({ handleDrawerClick, className }: Props) {
               </NavLink>
               <CustomLink
                 isFile
-                href={`/${config.resume}`}
+                href={`/${i18n.language === 'en' ? config.resumeEn : config.resumeZh}`}
                 className="flex flex-row items-center gap-2 rounded-full border-2 border-gray05 px-4 py-2 transition-colors hover:bg-gray02 dark:border-gray02 hover:dark:bg-gray05"
               >
                 <HiDownload className="h-[1.2rem] w-[1.2rem]" />
