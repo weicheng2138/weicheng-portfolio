@@ -10,9 +10,9 @@ import CustomImage from '@/components/custom-image';
 
 const Projects = () => {
   const { t } = useTranslation('projects');
-  const projects: ProjectItem[] = t('details', {
+  const projects = t('details', {
     returnObjects: true,
-  });
+  }) as ProjectItem[];
 
   return (
     <>
