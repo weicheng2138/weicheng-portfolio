@@ -15,16 +15,26 @@
       "jobs": [
         {
           "id": 0,
+          "title": "Frontend Developer",
+          "company": "Nitra",
+          "period": "2025/10 - current",
+          "description": {
+            "brief": "Handle Fintech product.",
+            "details": []
+          }
+        },
+        {
+          "id": 1,
           "title": "Web Developer",
           "company": "Cathay Life Insurance Co., Ltd.",
-          "period": "2025/02 - current",
+          "period": "2025/02 - 2025/10",
           "description": {
             "brief": "Lead the frontend design and development of the second-generation actuarial system, focusing on modern UI/UX principles, performance optimization, and seamless integration with backend services to enhance user experience and operational efficiency.",
             "details": []
           }
         },
         {
-          "id": 1,
+          "id": 2,
           "title": "Frontend Developer",
           "company": "President Information Corp.",
           "period": "2021/10 - 2025/02",
@@ -37,7 +47,7 @@
           }
         },
         {
-          "id": 2,
+          "id": 3,
           "title": "Part-time Frontend Engineer",
           "company": "Gain Miles Technology Platform Limited",
           "period": "2023/05 - 2023/09",
@@ -49,7 +59,7 @@
           }
         },
         {
-          "id": 3,
+          "id": 4,
           "title": "R&D Substitute",
           "company": "National Taiwan University",
           "period": "2017/08 - 2021/06",
@@ -63,7 +73,7 @@
           }
         },
         {
-          "id": 4,
+          "id": 5,
           "title": "Co-founder & Software Developer",
           "company": "Anhe Three Dimensional Corp.",
           "period": "2015/08 - 2017/07",
