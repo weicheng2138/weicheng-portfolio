@@ -11,41 +11,25 @@ enum Breakpoints {
   MD = 'md',
 }
 
-const useBreakpoint = () => {
-  const [breakpoint, setBreakPoint] = useState<'xs' | 'sm' | 'md'>('xs');
-  const [windowSize, setWindowSize] = useState<{
-    width?: number;
-    height?: number;
-  }>({
-    width: undefined,
-    height: undefined,
-  });
+const getBreakpoint = (width: number | undefined): 'xs' | 'sm' | 'md' => {
+  if (width === undefined) return Breakpoints.XS;
+  if (width <= 450) return Breakpoints.XS;
+  if (width <= 768) return Breakpoints.SM;
+  return Breakpoints.MD;
+};
 
-  const handleResize = () => {
-    setWindowSize({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
-  };
+const useBreakpoint = () => {
+  const [width, setWidth] = useState<number | undefined>(() =>
+    typeof window === 'undefined' ? undefined : window.innerWidth,
+  );
 
   useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
-    handleResize();
-
-    if (windowSize.width === undefined) return;
-    if (0 < windowSize.width && windowSize.width <= 450) {
-      setBreakPoint(Breakpoints.XS);
-    }
-    if (450 < windowSize.width && windowSize.width <= 768) {
-      setBreakPoint(Breakpoints.SM);
-    }
-    if (windowSize.width > 768) {
-      setBreakPoint(Breakpoints.MD);
-    }
     return () => window.removeEventListener('resize', handleResize);
-  }, [windowSize.width]);
+  }, []);
 
-  return breakpoint;
+  return getBreakpoint(width);
 };
 
 export default useBreakpoint;

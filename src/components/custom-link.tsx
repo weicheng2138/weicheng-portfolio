@@ -25,18 +25,15 @@ const CustomLink = ({
       </a>
     );
 
-  const NoHrefComponent = () => {
+  if (href === undefined) {
     return <span className="text-red-600">There is no href right now</span>;
-  };
-  const ExternalLink = () => {
-    return (
-      <a target="_blank" rel="noopener noreferrer" href={href} {...rest}>
-        {children}
-      </a>
-    );
-  };
+  }
 
-  return <>{href !== undefined ? <ExternalLink /> : <NoHrefComponent />}</>;
+  return (
+    <a target="_blank" rel="noopener noreferrer" href={href} {...rest}>
+      {children}
+    </a>
+  );
 };
 
 export default CustomLink;

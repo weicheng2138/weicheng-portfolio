@@ -30,7 +30,7 @@ const Projects = () => {
       {/* HERO */}
 
       {/* PROJECTS */}
-      <section className="mb-[3.5rem] flex w-full max-w-5xl flex-col gap-28 px-8 py-20 md:px-14 md:py-28">
+      <section className="mb-14 flex w-full max-w-5xl flex-col gap-28 px-8 py-20 md:px-14 md:py-28">
         {projects.map((project) => {
           return (
             <Link key={project.id} to={`/projects/${project.id}`}>

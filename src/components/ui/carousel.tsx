@@ -128,6 +128,8 @@ const Carousel = React.forwardRef<
         return;
       }
 
+      // Embla is an external system; initial sync mirrors its state into React.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       onInit(api);
       onSelect(api);
       api.on('reInit', onSelect);

@@ -34,7 +34,7 @@ const NotFound = () => {
   // }, [navigate]);
   return (
     <>
-      <div className="relative z-10 flex h-dvh w-full justify-center pb-[3.5rem] pt-[4.5rem]">
+      <div className="relative z-10 flex h-dvh w-full justify-center pb-14 pt-18">
         <section className="flex h-full w-full max-w-5xl flex-col items-center justify-center px-2">
           <TbError404 className="h-40 w-40" />
           <Typography variant="h2" className="mb-20 max-w-96 text-center">

@@ -48,7 +48,7 @@ const CardImage = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('h-[17rem] w-full overflow-hidden rounded-lg', className)}
+    className={cn('h-68 w-full overflow-hidden rounded-lg', className)}
     {...props}
   >
     {props.children}

@@ -61,7 +61,6 @@ const TextRoller = ({ textArray, className }: Props) => {
           transition={{
             duration: 4,
             ease: 'easeInOut',
-            times: 1,
             repeat: Infinity,
           }}
         >
