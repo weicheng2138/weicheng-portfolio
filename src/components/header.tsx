@@ -48,8 +48,18 @@ function Header({ handleDrawerClick, className }: Props) {
     >
       <nav className="flex w-full max-w-5xl items-center justify-between px-2 text-gray05 dark:text-gray02 sm:px-4">
         <NavLink to="/">
-          <Button variant="ghost" size="icon" className="hover:bg-transparent">
-            <HiCode className="h-[1.2rem] w-[1.2rem]" />
+          <Button
+            variant="ghost"
+            size="icon"
+            className="group hover:bg-transparent"
+          >
+            <HiCode
+              className={cn(
+                'h-[1.2rem] w-[1.2rem] transition-all duration-300 ease-out',
+                'group-hover:scale-125 group-hover:-rotate-12 group-hover:text-primary',
+                'group-hover:drop-shadow-[0_0_10px_hsl(var(--primary))]',
+              )}
+            />
           </Button>
         </NavLink>
 

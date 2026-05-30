@@ -18,7 +18,6 @@ import ContentLayout from '@/layouts/content-layout';
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      // <Route path="/" element={<DefaultLayout />} errorElement={<NotFound />}>
       <Route path="/" element={<DefaultLayout />}>
         <Route index element={<Home />} />
 
@@ -46,24 +45,6 @@ function App() {
       </ThemeProvider>
     </>
   );
-  // return (
-  //   <>
-  //     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-  //       <Header />
-  //       <Routes>
-  //         <Route path="/" element={<Home />} />
-  //         <Route path="/about" element={<About />} />
-  //
-  //         <Route path="/projects">
-  //           <Route index element={<Projects />} />
-  //           <Route path=":name" element={<Project />} />
-  //         </Route>
-  //
-  //         <Route path="*" element={<NotFound />} />
-  //       </Routes>
-  //     </ThemeProvider>
-  //   </>
-  // );
 }
 
 export default App;
