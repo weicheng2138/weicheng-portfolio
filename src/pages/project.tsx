@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import Typography from '@/components/typography';
 import { useTranslation } from 'react-i18next';
 import { Link, useParams } from 'react-router-dom';
@@ -32,7 +32,7 @@ const Project = () => {
   const project = projects.find((project) => project.id === title);
 
   const [_api, setApi] = useState<CarouselApi>();
-  const carouselPlugin = useRef(
+  const [carouselPlugin] = useState(() =>
     Autoplay({ delay: 2000, stopOnInteraction: false, stopOnMouseEnter: true }),
   );
 
@@ -72,7 +72,7 @@ const Project = () => {
           </section>
 
           <Carousel
-            plugins={[carouselPlugin.current]}
+            plugins={[carouselPlugin]}
             setApi={setApi}
             className="mb-10 w-full hover:cursor-grab active:cursor-grabbing md:mb-20"
           >

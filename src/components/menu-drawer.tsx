@@ -9,7 +9,7 @@ import { VscGithubInverted } from 'react-icons/vsc';
 import { RiLinkedinFill } from 'react-icons/ri';
 
 import { useTranslation } from 'react-i18next';
-import { useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import CustomLink from './custom-link';
 import Typography from './typography';
@@ -28,27 +28,23 @@ type Props = {
 };
 const MenuDrawer = ({ show, handleClose }: Props) => {
   const { t, i18n } = useTranslation('common');
-  const bodyRef = useRef(document.querySelector('body'));
-  const drawerPortalRef = useRef(
-    document.getElementById('drawer-root') || createDrawerPortal(),
+  const [drawerPortal] = useState(
+    () => document.getElementById('drawer-root') || createDrawerPortal(),
   );
 
   // Append portal root on mount
   useEffect(() => {
-    const body = bodyRef.current;
-    const drawerPortal = drawerPortalRef.current;
-    if (!body) return;
-    body.appendChild(drawerPortalRef.current);
+    const body = document.body;
+    body.appendChild(drawerPortal);
     return () => {
       drawerPortal.remove();
       body.classList.remove('overflow-hidden');
     };
-  }, []);
+  }, [drawerPortal]);
 
   // Handle overflow hidden on body
   useEffect(() => {
-    const body = bodyRef.current;
-    if (!body) return;
+    const body = document.body;
     if (show) {
       body.classList.add('overflow-hidden');
     } else {
@@ -75,7 +71,7 @@ const MenuDrawer = ({ show, handleClose }: Props) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2, delay: 0.1 }}
-            className={cn('fixed inset-0 z-40 backdrop-blur-sm')}
+            className={cn('fixed inset-0 z-40 backdrop-blur-xs')}
             onClick={() => handleClose()}
           />
           <motion.div
@@ -130,7 +126,7 @@ const MenuDrawer = ({ show, handleClose }: Props) => {
               <CustomLink
                 isFile
                 href={`/${i18n.language === 'en' ? config.resumeEn : config.resumeZh}`}
-                className="mt-2 flex flex-row items-center gap-2 rounded-full border-2 border-gray05 px-4 py-2 transition-colors hover:bg-gray02 dark:border-gray02 hover:dark:bg-gray05"
+                className="mt-2 flex flex-row items-center gap-2 rounded-full border-2 border-gray05 px-4 py-2 transition-colors hover:bg-gray02 dark:border-gray02 dark:hover:bg-gray05"
                 onClick={() => handleClose()}
               >
                 <HiDownload className="h-[1.2rem] w-[1.2rem]" />
@@ -144,20 +140,20 @@ const MenuDrawer = ({ show, handleClose }: Props) => {
             <div className="flex flex-col gap-2 p-2">
               <CustomLink href="https://github.com/weicheng2138">
                 <Button variant="social" className="flex h-auto gap-2 py-4">
-                  <VscGithubInverted className="h-[1.25rem] w-[1.25rem]" />
+                  <VscGithubInverted className="h-5 w-5" />
                   <Typography variant="button1">Github</Typography>
                 </Button>
               </CustomLink>
               <CustomLink href="https://www.linkedin.com/in/wei-cheng-hung-3a40a0149/">
                 <Button variant="social" className="flex h-auto gap-2 py-4">
-                  <RiLinkedinFill className="h-[1.25rem] w-[1.25rem]" />
+                  <RiLinkedinFill className="h-5 w-5" />
                   <Typography variant="button1">Linkedin</Typography>
                 </Button>
               </CustomLink>
 
               <CustomLink href="mailto:weicheng2138@gmail.com">
                 <Button variant="social" className="flex h-auto gap-2 py-4">
-                  <BiLogoGmail className="h-[1.25rem] w-[1.25rem]" />
+                  <BiLogoGmail className="h-5 w-5" />
                   <Typography variant="button1">Gmail</Typography>
                 </Button>
               </CustomLink>
@@ -166,7 +162,7 @@ const MenuDrawer = ({ show, handleClose }: Props) => {
         </>
       )}
     </AnimatePresence>,
-    drawerPortalRef.current,
+    drawerPortal,
   );
 };
 export default MenuDrawer;

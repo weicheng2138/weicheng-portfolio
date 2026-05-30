@@ -40,10 +40,10 @@ function Header({ handleDrawerClick, className }: Props) {
   return (
     <header
       className={cn(
-        'fixed left-0 right-0 top-0 flex h-[4.5rem] w-full justify-center transition',
+        'fixed left-0 right-0 top-0 flex h-18 w-full justify-center transition',
         className,
         !isTop && 'border-b border-zinc-200 dark:border-zinc-800',
-        'bg-radial-light backdrop-blur-sm backdrop-saturate-50 [background-size:4px_4px] dark:bg-radial-dark',
+        'bg-radial-light backdrop-blur-xs backdrop-saturate-50 bg-size-[4px_4px] dark:bg-radial-dark',
       )}
     >
       <nav className="flex w-full max-w-5xl items-center justify-between px-2 text-gray05 dark:text-gray02 sm:px-4">
@@ -71,7 +71,7 @@ function Header({ handleDrawerClick, className }: Props) {
               <CustomLink
                 isFile
                 href={`/${i18n.language === 'en' ? config.resumeEn : config.resumeZh}`}
-                className="flex flex-row items-center gap-2 rounded-full border-2 border-gray05 px-4 py-2 transition-colors hover:bg-gray02 dark:border-gray02 hover:dark:bg-gray05"
+                className="flex flex-row items-center gap-2 rounded-full border-2 border-gray05 px-4 py-2 transition-colors hover:bg-gray02 dark:border-gray02 dark:hover:bg-gray05"
               >
                 <HiDownload className="h-[1.2rem] w-[1.2rem]" />
                 <Typography variant="button1">{t('nav.resume')}</Typography>

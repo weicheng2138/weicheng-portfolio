@@ -46,7 +46,7 @@ const Home = () => {
         {/* HERO */}
         <section
           id="hero-about"
-          className="flex w-full justify-center bg-gray02  pb-[7.5rem] pt-40 dark:bg-gray05"
+          className="flex w-full justify-center bg-gray02  pb-30 pt-40 dark:bg-gray05"
         >
           <motion.article
             initial={{ opacity: 0, x: 100 }}
@@ -91,7 +91,7 @@ const Home = () => {
         {/* HERO */}
 
         {/* EXPERIENCE */}
-        <section className="flex w-full justify-center py-[7.5rem]">
+        <section className="flex w-full justify-center py-30">
           <motion.article
             initial={{ opacity: 0, x: -100 }}
             viewport={{ once: true }}
@@ -160,7 +160,7 @@ const Home = () => {
         {/* EXPERIENCE */}
 
         {/* CONTACT ME */}
-        <section className="flex w-full justify-center bg-gray02 pb-[3.5rem] pt-40 dark:bg-gray05">
+        <section className="flex w-full justify-center bg-gray02 pb-14 pt-40 dark:bg-gray05">
           <motion.article
             initial={{ opacity: 0, x: 100 }}
             viewport={{ once: true }}
@@ -170,7 +170,7 @@ const Home = () => {
               transition: { duration: 1, type: 'spring' },
             }}
             className={cn(
-              'flex w-full max-w-5xl flex-col items-center justify-center px-14 pb-[7.5rem]',
+              'flex w-full max-w-5xl flex-col items-center justify-center px-14 pb-30',
               'md:flex-row md:items-start md:gap-10',
             )}
           >
@@ -185,20 +185,20 @@ const Home = () => {
             <div className="flex w-full flex-col gap-2 md:basis-1/2">
               <CustomLink href="https://github.com/weicheng2138">
                 <Button variant="social" className="flex h-auto gap-2 py-4">
-                  <VscGithubInverted className="h-[1.25rem] w-[1.25rem]" />
+                  <VscGithubInverted className="h-5 w-5" />
                   <Typography variant="button1">Github</Typography>
                 </Button>
               </CustomLink>
               <CustomLink href="https://www.linkedin.com/in/wei-cheng-hung-3a40a0149/">
                 <Button variant="social" className="flex h-auto gap-2 py-4">
-                  <RiLinkedinFill className="h-[1.25rem] w-[1.25rem]" />
+                  <RiLinkedinFill className="h-5 w-5" />
                   <Typography variant="button1">Linkedin</Typography>
                 </Button>
               </CustomLink>
 
               <CustomLink href="mailto:weicheng2138@gmail.com">
                 <Button variant="social" className="flex h-auto gap-2 py-4">
-                  <BiLogoGmail className="h-[1.25rem] w-[1.25rem]" />
+                  <BiLogoGmail className="h-5 w-5" />
                   <Typography variant="button1">Gmail</Typography>
                 </Button>
               </CustomLink>

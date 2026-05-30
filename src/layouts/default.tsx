@@ -11,25 +11,22 @@ const DefaultLayout = () => {
   const breakpoint = useBreakpoint();
   const scrollbarWidth = getScrollbarWidth();
 
-  const handleDrawerClick = () => setToggleDrawer(() => !toggleDrawer);
+  // Drawer is only meaningful at the xs breakpoint; force-close above it.
+  const showDrawer = toggleDrawer && breakpoint === 'xs';
+
+  const handleDrawerClick = () => setToggleDrawer((prev) => !prev);
 
   useEffect(() => {
-    if (breakpoint !== 'xs') {
-      setToggleDrawer(() => false);
-    }
-  }, [breakpoint]);
-
-  useEffect(() => {
-    if (toggleDrawer) {
+    if (showDrawer) {
       document.body.style.paddingRight = `${scrollbarWidth}px`;
     } else {
       document.body.style.paddingRight = `0px`;
     }
-  }, [toggleDrawer, scrollbarWidth]);
+  }, [showDrawer, scrollbarWidth]);
   return (
     <div className={cn('relative flex flex-col items-center scroll-smooth')}>
       <Header className="z-30" handleDrawerClick={handleDrawerClick} />
-      <MenuDrawer show={toggleDrawer} handleClose={handleDrawerClick} />
+      <MenuDrawer show={showDrawer} handleClose={handleDrawerClick} />
       <Outlet />
 
       <Footer />
