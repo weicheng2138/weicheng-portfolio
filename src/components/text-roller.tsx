@@ -1,35 +1,139 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import {
+  motion,
+  useAnimationControls,
+  useMotionValue,
+  useMotionValueEvent,
+} from 'framer-motion';
 import useBreakpoint from '@/hooks/useBreakpoint';
 import { cn } from '@/lib/utils';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 type Props = {
   textArray?: string[];
   className?: string;
 };
-const TextRoller = ({ textArray, className }: Props) => {
-  // console.log('$$$ TextRoller rendered');
 
-  const { scrollYProgress, scrollY } = useScroll();
-  const translateY = useTransform(scrollYProgress, [0, 1], [0, -100]);
+const UNIQUE_LINES = [
+  { text: 'Hello World!', color: 'text-[#e06c75]' },
+  { text: 'こんにちは世界！', color: 'text-[#61afef]' },
+  { text: 'Hallo Welt!', color: 'text-[#98c379]' },
+  { text: '您好世界！', color: 'text-[#e5c07b]' },
+];
+const CYCLE = UNIQUE_LINES.length;
+const REPEATS = 3;
+const RENDER_LINES = Array.from(
+  { length: REPEATS * CYCLE },
+  (_, i) => UNIQUE_LINES[i % CYCLE],
+);
+
+const STEP_DURATION = 1;
+const RESUME_AFTER_MS = 2000;
+
+const TextRoller = ({ className }: Props) => {
   const animationRef = useRef<HTMLDivElement>(null);
-  const [elementHeight, setElementHeight] = useState(240);
-  const [elementCount, setElementCount] = useState(0);
+  const resumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [elementHeight, setElementHeight] = useState(0);
+  const [isInteracting, setIsInteracting] = useState(false);
 
+  const y = useMotionValue(0);
+  const controls = useAnimationControls();
   const breakpoint = useBreakpoint();
 
   useEffect(() => {
-    // console.log('$$$ TextRoller useEffect');
-    // console.log('$$$ breakpoint', breakpoint);
-    // console.log('$$$ elementHeight', elementHeight);
     const animationDiv = animationRef.current;
     if (!animationDiv) return;
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setElementHeight(animationDiv.children[0].clientHeight);
-      setElementCount(animationDiv.children.length);
-      // console.log('$$$ animationDiv', animationDiv.children[0].clientHeight);
     }, 100);
-  }, [elementHeight, breakpoint]);
+    return () => clearTimeout(timer);
+  }, [breakpoint]);
+
+  // Cylindrical wrap: y is unbounded, but every change snaps it back into
+  // the working range (-CYCLE*h, 0]. Because RENDER_LINES repeats the same
+  // 4 unique lines 3 times, jumping by CYCLE*h lands on visually identical
+  // content, so the wrap is invisible.
+  useMotionValueEvent(y, 'change', (latest) => {
+    if (!elementHeight) return;
+    const cycle = CYCLE * elementHeight;
+    if (latest > 0) y.set(latest - cycle);
+    else if (latest <= -cycle) y.set(latest + cycle);
+  });
+
+  const snapToNearest = useCallback(
+    (current: number) => {
+      if (!elementHeight) return current;
+      return Math.round(current / elementHeight) * elementHeight;
+    },
+    [elementHeight],
+  );
+
+  // Auto-roll while idle: advance one line, infinitely.
+  useEffect(() => {
+    if (isInteracting || !elementHeight) {
+      controls.stop();
+      return;
+    }
+    let cancelled = false;
+    const loop = async () => {
+      while (!cancelled) {
+        const cur = y.get();
+        const snapped = snapToNearest(cur);
+        if (Math.abs(snapped - cur) > 0.5) {
+          try {
+            await controls.start({
+              y: snapped,
+              transition: { duration: 0.3, ease: 'easeOut' },
+            });
+          } catch {
+            break;
+          }
+          continue;
+        }
+        try {
+          await controls.start({
+            y: snapped - elementHeight,
+            transition: { duration: STEP_DURATION, ease: 'easeInOut' },
+          });
+        } catch {
+          break;
+        }
+      }
+    };
+    loop();
+    return () => {
+      cancelled = true;
+    };
+  }, [isInteracting, elementHeight, snapToNearest, y, controls]);
+
+  const handleDragStart = () => {
+    setIsInteracting(true);
+    controls.stop();
+    if (resumeTimerRef.current) {
+      clearTimeout(resumeTimerRef.current);
+      resumeTimerRef.current = null;
+    }
+  };
+
+  const handleDragEnd = async () => {
+    const target = snapToNearest(y.get());
+    try {
+      await controls.start({
+        y: target,
+        transition: { duration: 0.3, ease: 'easeOut' },
+      });
+    } catch {
+      // ignore — interrupted by a new interaction
+    }
+    resumeTimerRef.current = setTimeout(() => {
+      setIsInteracting(false);
+    }, RESUME_AFTER_MS);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+    };
+  }, []);
 
   return (
     <div
@@ -37,9 +141,6 @@ const TextRoller = ({ textArray, className }: Props) => {
         'relative flex items-center justify-center font-fira text-base text-[#e4bb68] sm:text-xl md:text-2xl',
         className,
       )}
-      style={{
-        height: elementHeight * (elementCount * 2 + 2),
-      }}
     >
       <h1>
         console
@@ -47,56 +148,31 @@ const TextRoller = ({ textArray, className }: Props) => {
         <span className="text-[#61afef]">log</span>('
       </h1>
       <div
-        className="relative"
-        style={{
-          transform: `translateY(${elementHeight * 2}px)`,
-        }}
+        className="relative overflow-hidden"
+        style={{ height: elementHeight || '1em' }}
       >
         <motion.div
           ref={animationRef}
-          className={cn('flex flex-col text-center')}
-          animate={{
-            translateY: ['0%', '-20%', '-40%', '-60%', '-80%'],
-          }}
-          transition={{
-            duration: 4,
-            ease: 'easeInOut',
-            repeat: Infinity,
-          }}
+          className={cn(
+            'flex select-none flex-col text-center touch-none',
+            'cursor-grab active:cursor-grabbing',
+          )}
+          style={{ y }}
+          drag="y"
+          dragMomentum={false}
+          dragElastic={0}
+          onDragStart={handleDragStart}
+          onDragEnd={handleDragEnd}
+          animate={controls}
         >
-          {/* {textArray.map((text, index) => ( */}
-          {/*   <h1 key={index} className={cn('relative text-[#e06c75]')}> */}
-          {/*     {text} */}
-          {/*   </h1> */}
-          {/* ))} */}
-          <h1 className="relative text-[#e06c75]">Hello World!</h1>
-          <h1 className="relative text-[#61afef]">こんにちは世界！</h1>
-          <h1 className="relative text-[#98c379]">Hallo Welt!</h1>
-          <h1 className="relative text-[#e5c07b]">您好世界！</h1>
-          <h1 className="relative text-[#e06c75]">Hello World!</h1>
+          {RENDER_LINES.map(({ text, color }, index) => (
+            <h1 key={index} className={cn('relative whitespace-nowrap', color)}>
+              {text}
+            </h1>
+          ))}
         </motion.div>
-
-        {/* After Mask for roller */}
-        <div
-          className={cn(
-            'absolute inset-0 z-10 bg-background transition-colors duration-500',
-          )}
-          style={{
-            transform: `translateY(${elementHeight}px)`,
-          }}
-        />
-
-        {/* Before Mask for roller */}
-        <div
-          className={cn(
-            'absolute inset-0 bottom-0 z-10 bg-background transition-colors duration-500',
-          )}
-          style={{
-            transform: `translateY(-${elementHeight * 5}px)`,
-          }}
-        />
       </div>
-      <h1 className="">');</h1>
+      <h1>');</h1>
     </div>
   );
 };

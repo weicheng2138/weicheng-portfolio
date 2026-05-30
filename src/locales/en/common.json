@@ -9,17 +9,17 @@
   "home": {
     "hero-content": " I'm a developer with an insatiable curiosity, dedicated to crafting outstanding frontend experiences. My coding journey blends a passion for technology with a commitment to problem-solving. I thrive on collaborating with teams to create captivating products. Here, I unite my technical skills and creativity to deliver a unique and impressive digital experience for you. Let's explore, innovate, and inspire together.",
     "contact-title": "Contact Me",
-    "contact-content": "I'm currently looking for full-time opportunities. If you have any questions or would like to get in touch, please feel free to email me at",
+    "contact-content": "I'm not actively looking for full-time opportunities right now, but I'm open to freelance and collaboration projects. If you have any questions or would like to get in touch, please feel free to email me at",
     "experience": {
       "title": "Experiences",
       "jobs": [
         {
           "id": 0,
           "title": "Frontend Developer",
-          "company": "Nitra",
+          "company": "Nitra, Inc.",
           "period": "2025/10 - current",
           "description": {
-            "brief": "Handle Fintech product.",
+            "brief": "Nitra is an AI-native operating system for healthcare practices to run their business and back office. The platform spans finance, procurement, a medical supplies marketplace and patient administration, automating workflows like payments, purchasing, inventory, scheduling, insurance verification, and patient communication.",
             "details": []
           }
         },
