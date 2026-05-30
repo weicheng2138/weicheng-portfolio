@@ -2,8 +2,6 @@ import { Card, CardImage, CardTags, CardTitle } from '@/components/card';
 import { FaChevronRight } from 'react-icons/fa6';
 import Typography from '@/components/typography';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import CustomImage from '@/components/custom-image';
@@ -46,7 +44,7 @@ const Projects = () => {
                           <Typography
                             key={`${index}-${tag}`}
                             variant="span"
-                            className="rounded bg-primary02 px-2 py-1 text-primary05"
+                            className="bg-primary02 text-primary05 rounded px-2 py-1"
                           >
                             {tag}
                           </Typography>
